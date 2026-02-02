@@ -11,7 +11,7 @@ export function Hero() {
     return (
         <div className="relative min-h-screen gradient-hero overflow-hidden pb-32">
             {/* Hero Image in center - behind text */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -19,18 +19,18 @@ export function Hero() {
                     className="relative"
                 >
                     {/* Hero Image */}
-                    <div className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] rounded-full flex items-center justify-center relative z-10">
+                    <div className="w-[350px] h-[450px] md:w-[450px] md:h-[550px] rounded-full flex items-center justify-center relative">
                         <img
                             src="/hero-image.png"
                             alt="Creative Developer"
-                            className="w-full h-full object-cover rounded-full border-4 border-orange-500/20 shadow-2xl shadow-orange-500/20"
+                            className="w-full h-full object-cover rounded-full border-4 border-orange-500/30 shadow-2xl shadow-orange-500/10 opacity-40"
                         />
                     </div>
                 </motion.div>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-8 min-h-screen flex flex-col">
+            <div className="relative z-20 max-w-7xl mx-auto px-6 pt-28 pb-8 min-h-screen flex flex-col">
                 {/* Main Content Area */}
                 <div className="flex-1 flex items-center">
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -40,7 +40,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
-                                className="text-lg md:text-xl text-white/80 mb-4"
+                                className="text-lg md:text-xl text-white/90 mb-4"
                             >
                                 Hey, I'm a
                             </motion.p>
@@ -49,7 +49,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
-                                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight text-white"
+                                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight text-white drop-shadow-lg"
                                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                             >
                                 Creative<br />
@@ -64,10 +64,10 @@ export function Hero() {
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className="lg:text-right lg:self-center"
                         >
-                            <h2 className="text-xl md:text-2xl font-semibold text-white mb-3">
+                            <h2 className="text-xl md:text-2xl font-semibold text-white mb-3 drop-shadow-md">
                                 Great design should<br />feel invisible.
                             </h2>
-                            <p className="text-white/60 text-sm md:text-base max-w-xs lg:ml-auto">
+                            <p className="text-white/70 text-sm md:text-base max-w-xs lg:ml-auto">
                                 From logo to language, I build brands that connect and convert.
                             </p>
                         </motion.div>

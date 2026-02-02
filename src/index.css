@@ -51,15 +51,13 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Gradient - More vibrant orange/red */
+/* Hero Gradient - Subtle dark theme with orange accent */
 .gradient-hero {
   background: linear-gradient(180deg,
       #0a0a0a 0%,
-      #1a0a02 20%,
-      #3d1206 40%,
-      #7c2d12 60%,
-      #ea580c 85%,
-      #f97316 100%);
+      #0f0f0f 40%,
+      #1a1a1a 70%,
+      #1f1410 100%);
   position: relative;
 }
 
@@ -70,9 +68,9 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%,
-      rgba(249, 115, 22, 0.6) 0%,
-      rgba(234, 88, 12, 0.4) 30%,
+  background: radial-gradient(ellipse 60% 50% at 50% 80%,
+      rgba(249, 115, 22, 0.15) 0%,
+      rgba(234, 88, 12, 0.08) 40%,
       transparent 70%);
   pointer-events: none;
 }
