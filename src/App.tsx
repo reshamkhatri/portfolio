@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import './index.css'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
@@ -7,6 +8,20 @@ import { Testimonials } from './components/Testimonials'
 import { Contact } from './components/Contact'
 import { Cursor } from './components/Cursor'
 import { Marquee } from './components/Marquee'
+import { AllProjects } from './components/AllProjects'
+
+function HomePage() {
+    return (
+        <main>
+            <Hero />
+            <Marquee />
+            <About />
+            <Projects />
+            <Testimonials />
+            <Contact />
+        </main>
+    )
+}
 
 function App() {
     return (
@@ -14,14 +29,10 @@ function App() {
             <div className="bg-grain" />
             <Cursor />
             <Navbar />
-            <main>
-                <Hero />
-                <Marquee />
-                <About />
-                <Projects />
-                <Testimonials />
-                <Contact />
-            </main>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/projects" element={<AllProjects />} />
+            </Routes>
         </div>
     )
 }
