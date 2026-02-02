@@ -90,7 +90,9 @@ export function Navbar() {
 
                 {/* CTA Button */}
                 <motion.a
-                    href="#contact"
+                    href="https://wa.me/9779764352843"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="hidden md:flex items-center gap-3 pl-6 pr-2 py-2 bg-white text-black font-semibold rounded-full group overflow-hidden relative"
@@ -178,7 +180,9 @@ export function Navbar() {
                                 ))}
 
                                 <motion.a
-                                    href="#contact"
+                                    href="https://wa.me/9779764352843"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.3 }}
