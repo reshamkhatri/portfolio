@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
     return (
-        <section className="relative min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
+        <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
             {/* Background Glow Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] opacity-90 blur-[100px]" />
