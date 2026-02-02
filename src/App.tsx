@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
-      <main>
+      <main className="flex flex-col w-full relative">
         <Hero />
         <Projects />
         <Testimonials />
