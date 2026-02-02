@@ -18,7 +18,7 @@ export function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-6xl md:text-8xl font-bold font-space text-white mb-8 leading-[0.9]">
+                        <h2 className="text-5xl md:text-8xl font-bold font-space text-white mb-8 leading-[0.9]">
                             Let's<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">connect</span>
                         </h2>
@@ -74,7 +74,7 @@ export function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-[#0f0f0f] border border-white/10 rounded-[2rem] p-8 md:p-10"
+                        className="bg-[#0f0f0f] border border-white/10 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10"
                     >
                         <form className="space-y-8">
                             <div>
