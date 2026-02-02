@@ -1,15 +1,8 @@
 import { motion } from 'framer-motion';
 
-const services = [
-    { num: '01', title: 'Brand Strategy' },
-    { num: '02', title: 'Brand Identity Design' },
-    { num: '03', title: 'Packaging Design' },
-    { num: '04', title: 'Creative Direction' },
-];
-
 export function Hero() {
     return (
-        <section className="relative min-h-[110vh] bg-black overflow-hidden px-4 md:px-0">
+        <section className="relative min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
             {/* Background Glow Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] opacity-40 blur-3xl" />
@@ -33,10 +26,10 @@ export function Hero() {
             </div>
 
             {/* Main Content Layer */}
-            <div className="relative z-20 max-w-7xl mx-auto min-h-screen flex flex-col justify-between pt-40 pb-20">
+            <div className="relative z-20 max-w-7xl mx-auto min-h-screen flex flex-col justify-center pb-20">
                 {/* Headline Section */}
-                <div className="relative flex flex-col md:flex-row items-end justify-between">
-                    <div className="w-full md:w-2/3">
+                <div className="relative flex flex-col md:flex-row items-end justify-between w-full">
+                    <div className="relative z-30">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -50,7 +43,7 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="text-[12vw] md:text-[8vw] lg:text-[10vw] font-bold leading-[0.85] tracking-tight text-white m-0"
+                            className="text-[15vw] md:text-[10vw] lg:text-[11vw] font-bold leading-none tracking-tighter text-white m-0"
                         >
                             Creative<br />
                             <span className="text-white">Director</span>
@@ -62,7 +55,7 @@ export function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="mt-12 md:mt-0 md:max-w-[18rem] text-right md:text-left bg-black/5 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-xl"
+                        className="mt-8 md:mt-0 md:mb-12 md:max-w-[20rem] text-right md:text-left"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
                             Great design should feel invisible.
@@ -72,25 +65,6 @@ export function Hero() {
                         </p>
                     </motion.div>
                 </div>
-
-                {/* Footer Services Grid */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 pt-12 border-t border-white/5"
-                >
-                    {services.map((service, i) => (
-                        <div key={i} className="group flex flex-col gap-2">
-                            <span className="text-orange-500 font-bold text-sm tracking-widest uppercase">
-                                #{service.num}
-                            </span>
-                            <p className="text-white text-lg md:text-xl font-bold leading-tight group-hover:text-orange-500 transition-colors">
-                                {service.title}
-                            </p>
-                        </div>
-                    ))}
-                </motion.div>
             </div>
 
             {/* Dark vignette bottom */}
