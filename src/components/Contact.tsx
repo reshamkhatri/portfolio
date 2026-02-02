@@ -100,7 +100,7 @@ export function Contact() {
 
                 {/* Footer */}
                 <div className="mt-20 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-                    <p>© 2026 Portfolio. All rights reserved. (v1.3)</p>
+                    <p>© 2026 Portfolio. All rights reserved. (v1.4)</p>
                 </div>
             </div>
         </section>
