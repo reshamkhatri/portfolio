@@ -79,7 +79,7 @@ export function Projects() {
                             </div>
 
                             {/* Card Footer */}
-                            <div className="p-4 space-y-3">
+                            <div className="p-4">
                                 {/* Actions */}
                                 <div className="flex items-center justify-between text-white">
                                     <div className="flex items-center gap-4">
@@ -89,22 +89,6 @@ export function Projects() {
                                     </div>
                                     <Bookmark className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
                                 </div>
-
-                                {/* Likes */}
-                                <p className="text-sm font-semibold text-white">
-                                    {project.likes} likes
-                                </p>
-
-                                {/* Caption */}
-                                <div className="text-sm text-gray-300">
-                                    <span className="font-semibold text-white mr-2">resham_kc</span>
-                                    {project.caption}
-                                </div>
-
-                                {/* Time */}
-                                <p className="text-[10px] text-gray-500 uppercase tracking-wide">
-                                    2 days ago
-                                </p>
                             </div>
                         </motion.div>
                     ))}
