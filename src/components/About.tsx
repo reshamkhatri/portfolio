@@ -10,7 +10,7 @@ const skills = [
 
 export function About() {
     return (
-        <section id="about" className="relative py-32 px-6 bg-[#0a0a0a] overflow-hidden">
+        <section id="about" className="relative z-10 py-32 px-6 bg-[#0a0a0a] overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[150px] -translate-y-1/2" />
