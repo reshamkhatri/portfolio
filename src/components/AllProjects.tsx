@@ -43,24 +43,20 @@ export function AllProjects() {
                             className="flex justify-center"
                         >
                             {/* Instagram Mockup Card */}
-                            <div className="bg-white rounded-xl overflow-hidden shadow-2xl flex flex-col text-black font-sans max-w-[400px] w-full transition-transform hover:scale-[1.02] duration-300">
+                            <div className="bg-white rounded-lg overflow-hidden shadow-xl flex flex-col text-black w-full max-w-[400px]">
                                 {/* Header */}
-                                <div className="px-4 py-3 flex items-center justify-between border-b border-gray-100">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[1.5px]">
-                                            <div className="w-full h-full rounded-full bg-white p-[1px]">
-                                                <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
-                                                    <img src="/hero-image.png" alt="Profile" className="w-full h-full object-cover" />
-                                                </div>
-                                            </div>
+                                <div className="px-3 py-2 flex items-center justify-between border-b border-gray-50">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
+                                            <img src="/hero-image.png" alt="Profile" className="w-full h-full object-cover" />
                                         </div>
-                                        <span className="font-bold text-sm">resham.khatri</span>
+                                        <span className="font-bold text-xs">resham.khatri</span>
                                     </div>
-                                    <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                                    <MoreHorizontal className="w-4 h-4 text-gray-400" />
                                 </div>
 
                                 {/* Image */}
-                                <div className="aspect-square bg-gray-50 overflow-hidden">
+                                <div className="aspect-square bg-gray-100 overflow-hidden">
                                     <img
                                         src={project.image}
                                         alt={project.title}
@@ -70,15 +66,13 @@ export function AllProjects() {
                                 </div>
 
                                 {/* Footer */}
-                                <div className="p-4 pt-2">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-4">
-                                            <Heart className="w-5 h-5 hover:text-red-500 cursor-pointer transition-colors" />
-                                            <MessageCircle className="w-5 h-5 hover:text-gray-500 cursor-pointer transition-colors" />
-                                            <Send className="w-5 h-5 hover:text-gray-500 cursor-pointer transition-colors" />
-                                        </div>
-                                        <Bookmark className="w-5 h-5 hover:text-gray-500 cursor-pointer transition-colors" />
+                                <div className="px-3 py-2 flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <Heart className="w-5 h-5" />
+                                        <MessageCircle className="w-5 h-5" />
+                                        <Send className="w-5 h-5" />
                                     </div>
+                                    <Bookmark className="w-5 h-5" />
                                 </div>
                             </div>
                         </motion.div>
