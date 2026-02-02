@@ -4,13 +4,13 @@ import { ExternalLink, Globe, Layout, Monitor } from 'lucide-react';
 
 const webProjects = [
     {
-        title: "DG Lytix",
-        url: "https://dglytix.com/",
-        image: "/projects/dglytix.png",
-        tags: ["Web Agency", "Creative Design", "Global Services"],
-        description: "A high-performance digital agency platform focusing on global creativity and digital future.",
-        color: "from-blue-600 to-purple-600",
-        gradient: "from-blue-500/20 via-purple-500/20 to-transparent"
+        title: "Himalayan Willow",
+        url: "https://www.himalayanwillow.com.np/",
+        image: "/projects/himalayan_willow.png",
+        tags: ["E-commerce", "Sports", "Cricket"],
+        description: "A vibrant sports e-commerce store specializing in premium willow cricket equipment.",
+        color: "from-emerald-600 to-teal-800",
+        gradient: "from-emerald-500/20 via-teal-500/20 to-transparent"
     },
     {
         title: "Iconic Law Firm",
@@ -22,13 +22,13 @@ const webProjects = [
         gradient: "from-amber-500/20 via-yellow-500/20 to-transparent"
     },
     {
-        title: "Himalayan Willow",
-        url: "https://www.himalayanwillow.com.np/",
-        image: "/projects/himalayan_willow.png",
-        tags: ["E-commerce", "Sports", "Cricket"],
-        description: "A vibrant sports e-commerce store specializing in premium willow cricket equipment.",
-        color: "from-emerald-600 to-teal-800",
-        gradient: "from-emerald-500/20 via-teal-500/20 to-transparent"
+        title: "DG Lytix",
+        url: "https://dglytix.com/",
+        image: "/projects/dglytix.png",
+        tags: ["Web Agency", "Creative Design", "Global Services"],
+        description: "A high-performance digital agency platform focusing on global creativity and digital future.",
+        color: "from-blue-600 to-purple-600",
+        gradient: "from-blue-500/20 via-purple-500/20 to-transparent"
     }
 ];
 
