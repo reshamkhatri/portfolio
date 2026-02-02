@@ -96,6 +96,7 @@ export function Projects() {
                                 rotateY: rotation,
                                 transformStyle: 'preserve-3d',
                                 width: faceWidth,
+                                willChange: 'transform'
                             }}
                             className="relative"
                         >
@@ -104,11 +105,12 @@ export function Projects() {
                                 return (
                                     <motion.div
                                         key={project.id}
-                                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gpu-accelerated"
                                         style={{
                                             width: faceWidth,
                                             transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                                            backfaceVisibility: 'hidden'
+                                            backfaceVisibility: 'hidden',
+                                            willChange: 'transform'
                                         }}
                                     >
                                         {/* Instagram Mockup Card */}
