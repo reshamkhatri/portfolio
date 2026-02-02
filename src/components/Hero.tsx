@@ -15,10 +15,10 @@ export function Hero() {
 
     return (
         <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
-            {/* Static Background Glow Effects - Replaced animations for performance */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_60%)]" />
+            {/* Static Background Glow Effects - Minimal footprint */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]" />
+                <div className="absolute top-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_60%)]" />
             </div>
 
             {/* Floating Glass Elements - Reduced count and simplified animation */}
