@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <meta name="description"
+        content="Portfolio of a Creative Developer featuring modern web design and interactive experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <nav class="navbar">
+        <div class="logo">PORTFOLIO</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="reveal-text">Creative</span><br>
+                        <span class="reveal-text">Developer</span>
+                    </h1>
+                    <p class="hero-subtitle">Crafting digital experiences with motion and code.</p>
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-background-elements">
+                <div class="parallax-wrapper orb-pos-1" data-speed="0.2">
+                    <div class="glow-orb orb-1"></div>
+                </div>
+                <div class="parallax-wrapper orb-pos-2" data-speed="-0.15">
+                    <div class="glow-orb orb-2"></div>
+                </div>
+                <!-- Glass Shapes -->
+                <div class="parallax-wrapper shape-pos-1" data-speed="0.1">
+                    <div class="glass-shape shape-sq"></div>
+                </div>
+                <div class="parallax-wrapper shape-pos-2" data-speed="0.3">
+                    <div class="glass-shape shape-ci"></div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <!-- Placeholder for user image -->
+                        <div class="placeholder-image">Your Image Here</div>
+                    </div>
+                    <div class="about-content">
+                        <p class="section-text">
+                            I am a passionate creative developer focused on building interactive and accessible web
+                            experiences.
+                            I combine technical expertise with a keen eye for design to create product solutions that
+                            users love.
+                        </p>
+                        <div class="skills-list">
+                            <span class="skill-tag">Web Design</span>
+                            <span class="skill-tag">Development</span>
+                            <span class="skill-tag">UI/UX</span>
+                            <span class="skill-tag">Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Selected Work</h2>
+                <div class="projects-grid">
+                    <!-- Placeholder Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="placeholder-project">Project 1 Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Name</h3>
+                            <p>Web Design & Development</p>
+                        </div>
+                    </article>
+                    <!-- Placeholder Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="placeholder-project">Project 2 Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Name</h3>
+                            <p>Web Design & Development</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-text">Interested in working together? Get in touch.</p>
+                <a href="mailto:hello@example.com" class="btn btn-secondary">Email Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

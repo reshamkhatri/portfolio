@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #171717;
+  --text-primary: #ffffff;
+  --text-muted: #888888;
+  --accent-orange: #f97316;
+  --accent-red: #ef4444;
+  --accent-purple: #a855f7;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Gradient backgrounds */
+.gradient-hero {
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, var(--accent-orange), var(--accent-red) 40%, var(--bg-primary) 70%);
+}
+
+.gradient-testimonial {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f0a19 50%, #0a0a0a 100%);
+}
+
+/* Animation utilities */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
