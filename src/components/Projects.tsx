@@ -104,7 +104,7 @@ export function Projects() {
                 >
                     <h2 className="text-4xl md:text-6xl font-bold font-space mb-6">
                         Social Media
-                        <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> Designs</span>
+                        <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> 3D Designs</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Drag to explore my curated collection of engaging social media campaigns.
