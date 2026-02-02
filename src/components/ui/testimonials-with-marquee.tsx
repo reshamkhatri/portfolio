@@ -35,8 +35,14 @@ export function TestimonialsSection({
                 </div>
 
                 <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                    <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:30s]">
-                        <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                    <div className="group flex overflow-hidden p-2 flex-row" style={{ gap: '2rem' }}>
+                        <div
+                            className="flex shrink-0 justify-around flex-row group-hover:[animation-play-state:paused]"
+                            style={{
+                                gap: '2rem',
+                                animation: 'marquee 30s linear infinite'
+                            }}
+                        >
                             {[...Array(4)].map((_, setIndex) => (
                                 testimonials.map((testimonial, i) => (
                                     <TestimonialCard
