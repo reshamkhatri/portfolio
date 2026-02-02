@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
-import Background3D from './components/Background3D'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
@@ -26,7 +25,8 @@ function App() {
 
   return (
     <>
-      <Background3D />
+      {/* Static Premium Background */}
+      <div className="fixed inset-0 -z-10 bg-[#050505] bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0d0d0d]" />
 
       {/* Scrollable Content */}
       <div className="relative z-10 text-white selection:bg-orange-500/30">
