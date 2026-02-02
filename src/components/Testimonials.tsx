@@ -24,7 +24,6 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-    return (
         <section className="py-32 mt-20 bg-gradient-to-b from-[#0a0a0a] via-[#0f0a19] to-[#1e1b4b] relative z-30 overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />

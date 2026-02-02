@@ -26,7 +26,6 @@ const projects = [
 
 export function Projects() {
     return (
-    return (
         <section id="projects" className="py-24 bg-[#0a0a0a] relative z-20">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
