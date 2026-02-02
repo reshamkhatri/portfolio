@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from 'lucide-react';
 
@@ -44,23 +44,35 @@ export function Projects() {
         offset: ["start start", "end end"]
     });
 
+    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const { cylinderWidth, faceWidth, radius, height } = useMemo(() => {
+        const isMobile = windowWidth < 768;
+        const cw = isMobile ? 1200 : 2000;
+        const fw = isMobile ? 280 : 380;
+        const h = isMobile ? 380 : 480;
+        return {
+            cylinderWidth: cw,
+            faceWidth: fw,
+            radius: cw / (2 * Math.PI),
+            height: h
+        };
+    }, [windowWidth]);
+
     const smoothScroll = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
+        stiffness: 150,
+        damping: 20,
+        mass: 0.5,
         restDelta: 0.001
     });
 
-    const cylinderWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 1200 : 2000;
-    const faceCount = featuredProjects.length;
-    const faceWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 280 : 380;
-    const radius = cylinderWidth / (2 * Math.PI);
-
     const rotation = useTransform(smoothScroll, [0, 1], [0, -360]);
-
-    // Simple hook-like effect to handle window resize for responsiveness
-    // Since we are using constants for math, we should ideally use state or a hook,
-    // but for this implementation, we'll use a dynamic check inside the render or a helper.
-    // Let's refine to use a more robust way if needed, but this works for standard SSR/Vite.
 
     return (
         <section
@@ -101,10 +113,9 @@ export function Projects() {
                                 rotateY: rotation,
                                 transformStyle: 'preserve-3d',
                                 width: faceWidth,
-                                height: typeof window !== 'undefined' && window.innerWidth < 768 ? 380 : 480,
-                                willChange: 'transform'
+                                height: height,
                             }}
-                            className="relative transition-all duration-500"
+                            className="relative gpu-accelerated"
                         >
                             {featuredProjects.map((project, i) => {
                                 const angle = (360 / faceCount) * i;
