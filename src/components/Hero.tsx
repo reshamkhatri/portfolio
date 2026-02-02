@@ -34,9 +34,9 @@ export function Hero() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-xl md:text-2xl text-white font-medium mb-6"
+                            className="text-xl md:text-2xl text-white/80 font-medium mb-2"
                         >
-                            Hey, I'm a
+                            Hey, I'm <span className="text-orange-400 font-bold">Resham KC</span>
                         </motion.p>
 
                         <motion.h1
@@ -46,7 +46,7 @@ export function Hero() {
                             className="font-space text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
                         >
                             Creative<br />
-                            <span className="text-white">Director</span>
+                            <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Creator</span>
                         </motion.h1>
                     </div>
 
