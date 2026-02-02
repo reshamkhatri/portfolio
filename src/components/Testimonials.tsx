@@ -24,33 +24,33 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-        <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#0f0a19] to-[#1e1b4b] relative overflow-hidden">
+        <section className="py-32 bg-gradient-to-b from-[#0a0a0a] via-[#0f0a19] to-[#1e1b4b] relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" />
 
-            <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-4 text-white"
+                        className="text-4xl md:text-5xl font-bold mb-6 text-white"
                         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         What people say
                     </h2>
-                    <p className="text-white/60 max-w-lg mx-auto">
+                    <p className="text-white/60 max-w-2xl mx-auto text-lg">
                         Discover what our satisfied customers have to say about their experiences with our products/services.
                     </p>
                 </motion.div>
 
                 {/* Testimonial Cards */}
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, i) => (
                         <motion.div
                             key={i}
@@ -60,8 +60,8 @@ export function Testimonials() {
                             transition={{ duration: 0.6, delay: i * 0.15 }}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
                             className={`relative p-6 rounded-2xl ${testimonial.featured
-                                    ? 'bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-blue-900/30 border border-purple-500/30'
-                                    : 'bg-white/5 border border-white/10'
+                                ? 'bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-blue-900/30 border border-purple-500/30'
+                                : 'bg-white/5 border border-white/10'
                                 } backdrop-blur-sm`}
                         >
                             {/* Avatar and info */}
