@@ -59,7 +59,6 @@ export function Projects() {
     };
 
     const goToSlide = (direction: 'prev' | 'next') => {
-        const anglePerSlide = 360 / faceCount;
         const currentRotation = dragX.get();
         const targetRotation = direction === 'next'
             ? currentRotation - (faceWidth)
@@ -181,8 +180,8 @@ export function Projects() {
                         <div
                             key={i}
                             className={`w-2 h-2 rounded-full transition-all duration-300 ${i === activeIndex
-                                    ? 'w-8 bg-gradient-to-r from-orange-400 to-red-500'
-                                    : 'bg-white/30'
+                                ? 'w-8 bg-gradient-to-r from-orange-400 to-red-500'
+                                : 'bg-white/30'
                                 }`}
                         />
                     ))}
