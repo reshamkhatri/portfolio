@@ -11,12 +11,12 @@ export function Marquee() {
                     className="flex flex-shrink-0 animate-marquee whitespace-nowrap gap-16 pr-16"
                     style={{ '--duration': '30s' } as React.CSSProperties}
                 >
-                    {[...servicesList, ...servicesList, ...servicesList, ...servicesList].map((service, i) => (
+                    {[...servicesList, ...servicesList].map((service, i) => (
                         <div key={i} className="flex items-center gap-16">
-                            <span className="text-4xl md:text-6xl font-bold font-space text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-white/5">
+                            <span className="text-4xl md:text-6xl font-bold font-space text-white/10 uppercase tracking-widest">
                                 {service}
                             </span>
-                            <div className="w-3 h-3 rounded-full bg-orange-500/20" />
+                            <div className="w-2 h-2 rounded-full bg-orange-500/20" />
                         </div>
                     ))}
                 </div>

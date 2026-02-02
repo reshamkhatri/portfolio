@@ -15,63 +15,30 @@ export function Hero() {
 
     return (
         <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
-            {/* Animated Background Glow Effects - Smoother without massive blurs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                        x: [0, 50, 0],
-                        y: [0, -30, 0],
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                    className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.2, 0.4, 0.2],
-                        x: [0, -40, 0],
-                        y: [0, 40, 0],
-                    }}
-                    transition={{
-                        duration: 12,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                    className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_60%)]"
-                />
+            {/* Static Background Glow Effects - Replaced animations for performance */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_60%)]" />
             </div>
 
-            {/* Floating Glass Elements - REMOVED backdrop-blur for performance */}
+            {/* Floating Glass Elements - Reduced count and simplified animation */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
-                {[...Array(4)].map((_, i) => (
+                {[...Array(2)].map((_, i) => (
                     <motion.div
                         key={i}
-                        initial={{
-                            x: Math.random() * 100 + "%",
-                            y: Math.random() * 100 + "%",
-                            opacity: 0
-                        }}
                         animate={{
-                            y: [null, "-20%", "20%"],
-                            x: [null, "10%", "-10%"],
-                            rotate: [0, 45, 0],
-                            opacity: 0.1
+                            y: ["-10%", "10%"],
+                            rotate: [0, 10, 0],
                         }}
                         transition={{
-                            duration: 20 + i * 5,
+                            duration: 15 + i * 5,
                             repeat: Infinity,
-                            ease: "linear"
+                            ease: "easeInOut"
                         }}
-                        className="absolute w-32 h-32 md:w-64 md:h-64 rounded-full bg-white/[0.03] border border-white/5"
+                        className="absolute w-64 h-64 rounded-full bg-white/[0.02] border border-white/5"
                         style={{
-                            left: `${i * 25}%`,
-                            top: `${(i % 2) * 40}%`,
+                            left: `${i * 60 + 10}%`,
+                            top: `${i * 30 + 20}%`,
                         }}
                     />
                 ))}
@@ -113,22 +80,9 @@ export function Hero() {
                             transition={{ duration: 1, delay: 0.4 }}
                             className="font-space text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
                         >
-                            <motion.span
-                                animate={{
-                                    textShadow: [
-                                        "0 0 0px rgba(255,255,255,0)",
-                                        "0 0 20px rgba(255,255,255,0.3)",
-                                        "0 0 0px rgba(255,255,255,0)"
-                                    ]
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                            >
+                            <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                 Creative
-                            </motion.span>
+                            </span>
                             <br />
                             <div className="h-[1.3em] w-max overflow-visible relative">
                                 <AnimatePresence mode="wait">
