@@ -130,7 +130,7 @@ export function Hero() {
                                 Creative
                             </motion.span>
                             <br />
-                            <div className="h-[1.2em] overflow-visible relative">
+                            <div className="h-[1.3em] w-max overflow-visible relative">
                                 <AnimatePresence mode="wait">
                                     <motion.span
                                         key={roles[roleIndex]}
@@ -138,7 +138,7 @@ export function Hero() {
                                         animate={{ y: 0, opacity: 1 }}
                                         exit={{ y: -50, opacity: 0 }}
                                         transition={{ duration: 0.5, ease: "circOut" }}
-                                        className="absolute left-0 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent block whitespace-nowrap pb-2"
+                                        className="absolute left-0 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent block whitespace-nowrap pb-2 pr-10"
                                     >
                                         {roles[roleIndex]}
                                     </motion.span>
