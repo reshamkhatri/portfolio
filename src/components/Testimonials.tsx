@@ -3,37 +3,27 @@ import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
 const testimonials = [
     {
         author: {
-            name: "Sarah Jenkins",
-            handle: "@sarah_design",
-            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
-        },
-        text: "The website redesign completely transformed our brand image. The attention to detail in the UI is unmatched!",
-        href: "https://twitter.com/sarah_design"
-    },
-    {
-        author: {
-            name: "Michael Chen",
-            handle: "@tech_mike",
+            name: "Ajay KC",
+            handle: "House of Jobs",
             avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
         },
-        text: "Incredible development skills. The site is blazing fast and the animations are buttery smooth. Highly recommended!",
-        href: "https://twitter.com/tech_mike"
+        text: "The graphic design posts Resham created for House of Jobs brought in real customers. His work directly contributed to our growth!"
     },
     {
         author: {
-            name: "Jessica Lee",
-            handle: "@jess_creative",
-            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-        },
-        text: "Worked with many designers, but this level of creativity and professionalism is rare. A true partner in our success."
-    },
-    {
-        author: {
-            name: "David Ross",
-            handle: "@dave_founder",
+            name: "Ranjit Hamal",
+            handle: "CBM College",
             avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
         },
-        text: "From concept to deployment, the process was seamless. The final product exceeded all our expectations."
+        text: "The social media designs for CBM College were outstanding. Professional, eye-catching, and perfectly aligned with our brand."
+    },
+    {
+        author: {
+            name: "Achal Acharya",
+            handle: "Impulse Investment & Management",
+            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+        },
+        text: "Resham's design work for Impulse Investment was exceptional. Creative, timely, and exactly what we needed to stand out."
     }
 ]
 
