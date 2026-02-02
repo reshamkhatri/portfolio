@@ -9,7 +9,7 @@ const services = [
 
 export function Hero() {
     return (
-        <div className="relative min-h-screen gradient-hero overflow-hidden">
+        <div className="relative min-h-screen gradient-hero overflow-hidden pb-32">
             {/* Hero Image in center - behind text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <motion.div

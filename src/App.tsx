@@ -7,7 +7,7 @@ import { Contact } from './components/Contact'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col gap-32">
       <Navbar />
       {/* Hero Section - Full Screen */}
       <Hero />
