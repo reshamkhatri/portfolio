@@ -5,11 +5,11 @@ import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Cursor } from './components/Cursor'
 import { AllProjects } from './components/AllProjects'
+import { WebProjects } from './components/WebProjects'
+import { Projects } from './components/Projects'
 
 // Lazy load non-critical sections
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })))
-const ProjectCarousel = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })))
-const WebProjects = lazy(() => import('./components/WebProjects').then(m => ({ default: m.WebProjects })))
 const Tools = lazy(() => import('./components/Tools').then(m => ({ default: m.Tools })))
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })))
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })))
@@ -29,7 +29,7 @@ function HomePage() {
             <Suspense fallback={<SectionLoader />}>
                 <Marquee />
                 <About />
-                <ProjectCarousel />
+                <Projects />
                 <WebProjects />
                 <Tools />
                 <Testimonials />

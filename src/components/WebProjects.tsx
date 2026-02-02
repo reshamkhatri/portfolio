@@ -37,7 +37,9 @@ export function WebProjects() {
     });
 
     return (
-        <section ref={containerRef} id="web-projects" className="relative py-32 bg-[#050505] overflow-hidden z-20">
+        <section ref={containerRef} id="web-projects" className="relative min-h-screen py-32 bg-[#050505] overflow-hidden z-30">
+            {/* Direct Background Color for debug */}
+            <div className="absolute inset-0 bg-[#050505]" />
             {/* Top Border Divider */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
             {/* Background Glows */}
