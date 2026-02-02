@@ -161,7 +161,7 @@ export function Projects() {
                     <div className="flex justify-center relative z-30">
                         <Link
                             to="/projects"
-                            className="group relative px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full overflow-hidden transition-all hover:border-orange-500/50 flex items-center gap-3 shadow-xl hover:shadow-orange-500/20"
+                            className="group relative px-6 py-3 bg-white/10 border border-white/20 rounded-full overflow-hidden transition-all hover:border-orange-500/50 flex items-center gap-3 shadow-xl hover:shadow-orange-500/20"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-20 transition-opacity" />
                             <span className="text-white text-sm font-semibold relative z-10">View All Projects</span>

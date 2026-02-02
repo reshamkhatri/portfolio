@@ -27,8 +27,8 @@ export function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             className={`fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 px-6 py-3 rounded-2xl transition-all duration-500 ${scrolled
-                ? 'backdrop-blur-lg bg-black/50 border border-white/10 shadow-2xl shadow-black/50'
-                : 'backdrop-blur-md bg-white/5 border border-white/5 shadow-xl'
+                ? 'bg-[#0a0a0a]/90 border border-white/10 shadow-2xl shadow-black/50'
+                : 'bg-white/10 border border-white/5 shadow-xl'
                 }`}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -157,7 +157,7 @@ export function Navbar() {
                         transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
                         className="md:hidden absolute top-full left-0 right-0 overflow-hidden"
                     >
-                        <div className="mx-4 mt-2 p-6 rounded-2xl backdrop-blur-xl bg-black/80 border border-white/10">
+                        <div className="mx-4 mt-2 p-6 rounded-2xl bg-[#0a0a0a] border border-white/10">
                             <div className="flex flex-col gap-2">
                                 {navLinks.map((link, i) => (
                                     <motion.a

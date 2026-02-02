@@ -1,5 +1,3 @@
-import { services } from '../constants/services'; // Assuming there is one or defining here
-// Let's just define it here to be safe as per previous file state
 const servicesList = [
     "BRANDING", "WEB DESIGN", "UI/UX", "DEVELOPMENT", "STRATEGY",
     "BRANDING", "WEB DESIGN", "UI/UX", "DEVELOPMENT", "STRATEGY"
