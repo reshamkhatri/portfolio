@@ -26,12 +26,12 @@ export function TestimonialCard({
         <Card
             {...(href ? { href } : {})}
             className={cn(
-                "flex flex-col rounded-lg border-t",
-                "bg-gradient-to-b from-muted/50 to-muted/10",
-                "p-4 text-start sm:p-6",
-                "hover:from-muted/60 hover:to-muted/20",
-                "max-w-[320px] sm:max-w-[320px]",
-                "transition-colors duration-300",
+                "flex flex-col rounded-xl border border-white/10",
+                "bg-white/5 backdrop-blur-md",
+                "p-6 text-start",
+                "hover:bg-white/10 hover:border-white/20",
+                "max-w-[320px] sm:max-w-[400px]",
+                "transition-all duration-300",
                 className
             )}
         >
