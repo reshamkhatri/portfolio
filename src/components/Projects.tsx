@@ -52,7 +52,7 @@ export function Projects() {
 
     const cylinderWidth = 2000;
     const faceCount = featuredProjects.length;
-    const faceWidth = 380; // Slightly smaller to ensure fit
+    const faceWidth = 380;
     const radius = cylinderWidth / (2 * Math.PI);
 
     const rotation = useTransform(smoothScroll, [0, 1], [0, -360]);
@@ -65,20 +65,20 @@ export function Projects() {
             style={{ height: '300vh' }}
         >
             {/* Sticky Container */}
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-start py-10 overflow-visible px-4 md:px-6">
+            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-visible px-4 md:px-6">
 
                 {/* Background Glow */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[150px]" />
                 </div>
 
-                <div className="max-w-7xl mx-auto w-full relative z-20">
+                <div className="max-w-7xl mx-auto w-full relative z-20 flex flex-col items-center">
                     {/* Section Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-8"
+                        className="text-center mb-12"
                     >
                         <h2 className="text-4xl md:text-6xl font-bold font-space mb-4">
                             Social Media
@@ -89,13 +89,14 @@ export function Projects() {
                         </p>
                     </motion.div>
 
-                    {/* 3D Carousel Container */}
-                    <div className="relative h-[480px] flex items-center justify-center mb-10" style={{ perspective: '2000px' }}>
+                    {/* 3D Carousel Container - Height increased to prevent overlap */}
+                    <div className="relative h-[550px] w-full flex items-center justify-center mb-16" style={{ perspective: '2000px' }}>
                         <motion.div
                             style={{
                                 rotateY: rotation,
                                 transformStyle: 'preserve-3d',
                                 width: faceWidth,
+                                height: 480,
                                 willChange: 'transform'
                             }}
                             className="relative"
@@ -105,16 +106,15 @@ export function Projects() {
                                 return (
                                     <motion.div
                                         key={project.id}
-                                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gpu-accelerated"
+                                        className="absolute top-0 left-0 w-full h-full gpu-accelerated"
                                         style={{
-                                            width: faceWidth,
                                             transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
                                             backfaceVisibility: 'hidden',
                                             willChange: 'transform'
                                         }}
                                     >
                                         {/* Instagram Mockup Card */}
-                                        <div className="bg-white rounded-xl overflow-hidden shadow-2xl flex flex-col text-black font-sans">
+                                        <div className="bg-white rounded-xl overflow-hidden shadow-2xl flex flex-col text-black font-sans h-full">
                                             {/* Header */}
                                             <div className="px-4 py-3 flex items-center justify-between border-b border-gray-100">
                                                 <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ export function Projects() {
                                             </div>
 
                                             {/* Image */}
-                                            <div className="aspect-square bg-gray-50 overflow-hidden">
+                                            <div className="flex-1 bg-gray-50 overflow-hidden relative">
                                                 <img
                                                     src={project.image}
                                                     alt={project.title}
