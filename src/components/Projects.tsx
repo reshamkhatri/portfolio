@@ -113,21 +113,23 @@ export function Projects() {
                                             backfaceVisibility: 'hidden'
                                         }}
                                     >
-                                        <div className="w-full h-full bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden group hover:border-orange-500/50 transition-all duration-500 shadow-2xl">
-                                            {/* Image */}
-                                            <div className="h-[75%] relative overflow-hidden">
-                                                <img
-                                                    src={project.image}
-                                                    alt={project.title}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60" />
-                                            </div>
+                                        <div className="w-full h-full p-[1px] rounded-2xl bg-gradient-to-tr from-orange-500 to-red-500 group transition-all duration-500 hover:scale-[1.02]">
+                                            <div className="w-full h-full bg-black/80 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
+                                                {/* Image */}
+                                                <div className="h-[75%] relative overflow-hidden">
+                                                    <img
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60" />
+                                                </div>
 
-                                            {/* Info */}
-                                            <div className="absolute bottom-0 left-0 right-0 p-4">
-                                                <h3 className="text-lg font-bold text-white mb-1">{project.title}</h3>
-                                                <p className="text-orange-500/80 text-[10px] font-semibold uppercase tracking-wider">{project.caption}</p>
+                                                {/* Info */}
+                                                <div className="absolute bottom-0 left-0 right-0 p-4">
+                                                    <h3 className="text-lg font-bold text-white mb-1">{project.title}</h3>
+                                                    <p className="text-orange-500/80 text-[10px] font-semibold uppercase tracking-wider">{project.caption}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>
