@@ -32,8 +32,8 @@ export function Testimonials() {
         <section className="relative z-10 py-32 px-6 bg-[#0a0a0a]">
             {/* Background Decor */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-red-500/10 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[60px]" />
+                <div className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-red-500/10 rounded-full blur-[60px]" />
             </div>
 
             <TestimonialsSection
