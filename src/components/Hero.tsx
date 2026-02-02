@@ -21,12 +21,12 @@ export function Hero() {
                 <div className="flex-1 relative flex items-center justify-center">
 
                     {/* Left Text: Hey I'm a Creative */}
-                    <div className="absolute left-0 top-1/3 -translate-y-1/2 z-20">
+                    <div className="absolute left-0 top-1/4 -translate-y-1/2 z-20 pointer-events-none">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-white text-xl md:text-3xl font-medium mb-4 pl-2"
+                            className="text-white text-xl md:text-4xl font-medium mb-6 pl-4"
                         >
                             Hey, I'm a
                         </motion.p>
@@ -34,7 +34,7 @@ export function Hero() {
                             initial={{ opacity: 0, x: -40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="text-7xl md:text-[9rem] lg:text-[11rem] font-bold text-white tracking-tighter leading-none"
+                            className="text-[6rem] md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-bold text-white tracking-tighter leading-[0.75]"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             Creative
@@ -42,31 +42,31 @@ export function Hero() {
                     </div>
 
                     {/* Right Text: Director */}
-                    <div className="absolute right-0 top-2/3 -translate-y-1/2 z-20 text-right">
+                    <div className="absolute right-0 top-[60%] -translate-y-1/2 z-20 text-right pointer-events-none">
                         <motion.h1
                             initial={{ opacity: 0, x: 40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.8, duration: 0.8 }}
-                            className="text-7xl md:text-[9rem] lg:text-[11rem] font-bold text-white tracking-tighter leading-none mb-6"
+                            className="text-[6rem] md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-bold text-white tracking-tighter leading-[0.75] mb-12"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             Director
                         </motion.h1>
 
-                        <div className="flex flex-col items-end max-w-md ml-auto">
+                        <div className="flex flex-col items-end max-w-xl ml-auto pr-4 pointer-events-none">
                             <motion.h3
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.2 }}
-                                className="text-2xl md:text-3xl font-semibold text-white mb-3"
+                                className="text-2xl md:text-5xl font-bold text-white mb-4 leading-tight"
                             >
-                                Great design should feel invisible.
+                                Great design should <br /> feel invisible.
                             </motion.h3>
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.4 }}
-                                className="text-white/70 text-base md:text-lg"
+                                className="text-white/80 text-lg md:text-2xl font-medium max-w-md"
                             >
                                 From logo to language, I build brands that connect and convert.
                             </motion.p>
@@ -75,15 +75,15 @@ export function Hero() {
 
                     {/* Center Image */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90vh] z-10 w-full max-w-3xl flex items-end justify-center pointer-events-none"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1.2 }}
+                        transition={{ duration: 1.2, delay: 0.2 }}
+                        className="absolute top-0 left-1/2 -translate-x-1/2 h-[120vh] z-10 w-full max-w-5xl flex items-start justify-center pointer-events-none"
                     >
                         <img
                             src="/hero-image.png"
                             alt="Creative Director"
-                            className="h-full w-auto object-contain drop-shadow-2xl"
+                            className="h-full w-auto object-cover md:object-contain drop-shadow-2xl translate-y-[-5%]"
                         />
                     </motion.div>
                 </div>

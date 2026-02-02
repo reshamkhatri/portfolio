@@ -49,10 +49,12 @@ export function Navbar() {
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 px-6 py-2.5 bg-white text-black rounded-full hover:bg-gray-200 transition-colors text-sm font-bold"
+                            className="flex items-center gap-4 pl-6 pr-2 py-2 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 shadow-xl group"
                         >
-                            Get in touch
-                            <ArrowRight size={16} />
+                            <span className="text-sm font-bold uppercase tracking-wider">Get in touch</span>
+                            <div className="bg-[#FF5500] p-2.5 rounded-full text-white group-hover:rotate-45 transition-transform duration-300">
+                                <ArrowRight size={20} />
+                            </div>
                         </motion.a>
                     </div>
 
