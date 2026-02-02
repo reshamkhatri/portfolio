@@ -34,10 +34,10 @@ body {
 /* Film Grain */
 .bg-grain {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
   pointer-events: none;
   z-index: 9998;
   opacity: 0.05;
