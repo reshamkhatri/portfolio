@@ -40,7 +40,7 @@ export function Navbar() {
                     className="relative group"
                 >
                     <span className="text-2xl font-bold tracking-tight text-white font-space">
-                        Folioblox
+                        Resham
                     </span>
                     <motion.div
                         className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500"

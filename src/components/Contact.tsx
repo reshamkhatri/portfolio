@@ -34,7 +34,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-500 mb-1">Email us</p>
-                                    <p className="text-white font-medium">contact@folioblox.com</p>
+                                    <p className="text-white font-medium">contact@reshamkhatri.com</p>
                                 </div>
                             </div>
 
@@ -136,7 +136,7 @@ export function Contact() {
                 </div>
 
                 <div className="mt-20 border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                    <p>© 2026 Folioblox. All rights reserved.</p>
+                    <p>© 2026 Resham Khatri. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition-colors">Terms of Conditions</a>
