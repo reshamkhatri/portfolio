@@ -19,10 +19,13 @@ export function Hero() {
                     className="relative"
                 >
                     {/* Circular glow effect where image will go */}
-                    <div className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] rounded-full bg-gradient-to-b from-orange-600/30 via-orange-500/20 to-transparent blur-sm flex items-center justify-center">
-                        <div className="w-[380px] h-[480px] md:w-[480px] md:h-[580px] rounded-t-full bg-gradient-to-b from-orange-700/40 to-transparent flex items-end justify-center pb-20">
-                            <span className="text-white/40 text-sm">Your Image Here</span>
-                        </div>
+                    {/* Hero Image */}
+                    <div className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] rounded-full flex items-center justify-center relative z-10">
+                        <img
+                            src="/hero-image.png"
+                            alt="Creative Developer"
+                            className="w-full h-full object-cover rounded-full border-4 border-orange-500/20 shadow-2xl shadow-orange-500/20"
+                        />
                     </div>
                 </motion.div>
             </div>
