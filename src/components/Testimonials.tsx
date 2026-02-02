@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Testimonials() {
     return (
-        <section className="py-32 px-6 bg-[#0a0a0a]">
+        <section className="relative z-10 py-32 px-6 bg-[#0a0a0a]">
             {/* Background Decor */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]" />
