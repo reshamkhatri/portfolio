@@ -26,9 +26,9 @@ export function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-            className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-500 ${scrolled
-                    ? 'backdrop-blur-xl bg-black/40 border-b border-white/10 shadow-2xl shadow-black/20'
-                    : 'backdrop-blur-md bg-black/10 border-b border-white/5'
+            className={`fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 px-6 py-4 rounded-2xl transition-all duration-500 ${scrolled
+                ? 'backdrop-blur-2xl bg-black/80 border border-white/10 shadow-2xl shadow-black/50'
+                : 'backdrop-blur-xl bg-black/60 border border-white/5 shadow-xl'
                 }`}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -62,8 +62,8 @@ export function Navbar() {
                             whileTap={{ scale: 0.95 }}
                         >
                             <span className={`relative z-10 transition-colors duration-300 ${activeLink === link.name
-                                    ? 'text-white font-medium'
-                                    : 'text-gray-400 group-hover:text-white'
+                                ? 'text-white font-medium'
+                                : 'text-gray-400 group-hover:text-white'
                                 }`}>
                                 {link.name}
                             </span>
@@ -169,8 +169,8 @@ export function Navbar() {
                                             setIsOpen(false);
                                         }}
                                         className={`py-3 px-4 rounded-xl transition-all duration-300 ${activeLink === link.name
-                                                ? 'bg-white/10 text-white font-medium'
-                                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            ? 'bg-white/10 text-white font-medium'
+                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         {link.name}
