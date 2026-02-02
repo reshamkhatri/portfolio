@@ -21,26 +21,26 @@ export function Navbar() {
                 }`}
         >
             <div className={`max-w-7xl mx-auto px-6 ${scrolled
-                    ? 'bg-black/30 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl mx-4 md:mx-auto'
-                    : 'bg-transparent'
+                ? 'bg-black/30 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl mx-4 md:mx-auto'
+                : 'bg-transparent'
                 } transition-all duration-300`}>
                 <div className="flex items-center justify-between py-2">
                     {/* Logo */}
                     <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="text-xl font-bold tracking-tight text-white"
+                        className="text-2xl font-bold tracking-tight text-white"
                         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
-                        Portfolio
+                        Folioblox
                     </motion.div>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
-                        {['Home', 'Work', 'About'].map((item) => (
+                        {['Home', 'About', 'Projects'].map((item) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+                                className="text-white/90 hover:text-white transition-colors text-base font-medium"
                             >
                                 {item}
                             </a>
@@ -49,9 +49,9 @@ export function Navbar() {
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 px-5 py-2 glass rounded-full hover:bg-white/10 transition-colors text-sm font-medium border border-white/10"
+                            className="flex items-center gap-2 px-6 py-2.5 bg-white text-black rounded-full hover:bg-gray-200 transition-colors text-sm font-bold"
                         >
-                            Let's talk
+                            Get in touch
                             <ArrowRight size={16} />
                         </motion.a>
                     </div>

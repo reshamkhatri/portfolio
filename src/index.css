@@ -14,7 +14,7 @@ body {
 }
 
 .cinematic-gradient {
-  background: radial-gradient(circle at 50% 50%, #ea580c 0%, #9a3412 25%, #7c2d12 50%, #0a0a0a 100%);
+  background: radial-gradient(circle at 50% 50%, #FF4500 0%, #FF8C00 25%, #8B0000 60%, #0a0a0a 100%);
 }
 
 .text-glow {
