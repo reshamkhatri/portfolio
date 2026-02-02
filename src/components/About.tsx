@@ -70,7 +70,7 @@ export function About() {
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
                             {[
-                                { value: '5+', label: 'Years Experience' },
+                                { value: '2+', label: 'Years Experience' },
                                 { value: '50+', label: 'Projects Completed' },
                                 { value: '30+', label: 'Happy Clients' },
                             ].map((stat, i) => (
