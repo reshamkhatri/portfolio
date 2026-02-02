@@ -80,7 +80,7 @@ export function Projects() {
             id="projects"
             ref={sectionRef}
             className="relative bg-[#0a0a0a] z-10"
-            style={{ height: '300vh' }}
+            style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '150vh' : '300vh' }}
         >
             {/* Sticky Container */}
             <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-visible px-4 md:px-6">
@@ -180,6 +180,15 @@ export function Projects() {
                             <ArrowRight className="w-4 h-4 text-orange-400 transition-transform group-hover:translate-x-1 relative z-10" />
                         </Link>
                     </div>
+
+                    {/* Scroll Hint for Web Showcase */}
+                    <motion.div
+                        style={{ opacity: useTransform(scrollYProgress, [0.8, 0.9], [0, 1]) }}
+                        className="mt-8 flex flex-col items-center gap-2"
+                    >
+                        <span className="text-gray-500 text-xs uppercase tracking-widest font-space">Next: Web Showcase</span>
+                        <div className="w-[1px] h-8 bg-gradient-to-b from-orange-500 to-transparent" />
+                    </motion.div>
                 </div>
             </div>
         </section>
