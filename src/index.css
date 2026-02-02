@@ -13,8 +13,12 @@
   }
 
   to {
-    transform: translateX(calc(-25% - 0.5rem));
+    transform: translateX(-25%);
   }
+}
+
+.animate-marquee {
+  will-change: transform;
 }
 
 :root {

@@ -15,39 +15,39 @@ export function Hero() {
 
     return (
         <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
-            {/* Animated Background Glow Effects */}
+            {/* Animated Background Glow Effects - Smoother without massive blurs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],
-                        opacity: [0.7, 0.9, 0.7],
+                        opacity: [0.3, 0.5, 0.3],
                         x: [0, 50, 0],
                         y: [0, -30, 0],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                    className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] blur-[100px]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.6, 0.8, 0.6],
-                        x: [0, -40, 0],
-                        y: [0, 40, 0],
                     }}
                     transition={{
                         duration: 10,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_40%)] blur-[100px]"
+                    className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.2, 0.4, 0.2],
+                        x: [0, -40, 0],
+                        y: [0, 40, 0],
+                    }}
+                    transition={{
+                        duration: 12,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_60%)]"
                 />
             </div>
 
-            {/* Floating Glass Elements */}
+            {/* Floating Glass Elements - REMOVED backdrop-blur for performance */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
                 {[...Array(4)].map((_, i) => (
                     <motion.div
@@ -61,14 +61,14 @@ export function Hero() {
                             y: [null, "-20%", "20%"],
                             x: [null, "10%", "-10%"],
                             rotate: [0, 45, 0],
-                            opacity: 0.15
+                            opacity: 0.1
                         }}
                         transition={{
-                            duration: 15 + i * 5,
+                            duration: 20 + i * 5,
                             repeat: Infinity,
                             ease: "linear"
                         }}
-                        className="absolute w-32 h-32 md:w-64 md:h-64 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10"
+                        className="absolute w-32 h-32 md:w-64 md:h-64 rounded-full bg-white/[0.03] border border-white/5"
                         style={{
                             left: `${i * 25}%`,
                             top: `${(i % 2) * 40}%`,
