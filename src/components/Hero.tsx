@@ -43,12 +43,12 @@ export function Hero() {
                     </div>
 
                     {/* Right Text: Director */}
-                    <div className="absolute right-0 top-[60%] -translate-y-1/2 z-20 text-right pointer-events-none">
+                    <div className="absolute right-0 top-[48%] z-20 text-right pointer-events-none">
                         <motion.h1
                             initial={{ opacity: 0, x: 40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.8, duration: 0.8 }}
-                            className="text-[6rem] md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-bold text-white tracking-tighter leading-[0.75] mb-12"
+                            className="text-[12vw] font-bold text-white tracking-tighter leading-none mb-4"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             Director
@@ -59,15 +59,15 @@ export function Hero() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.2 }}
-                                className="text-2xl md:text-5xl font-bold text-white mb-4 leading-tight"
+                                className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight"
                             >
-                                Great design should <br /> feel invisible.
+                                Great design should feel invisible.
                             </motion.h3>
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.4 }}
-                                className="text-white/80 text-lg md:text-2xl font-medium max-w-md"
+                                className="text-white/80 text-sm md:text-lg lg:text-xl font-medium max-w-sm"
                             >
                                 From logo to language, I build brands that connect and convert.
                             </motion.p>

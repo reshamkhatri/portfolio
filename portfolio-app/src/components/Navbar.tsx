@@ -16,14 +16,14 @@ export function Navbar() {
                 {/* Logo */}
                 <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="text-xl font-bold tracking-tight"
+                    className="text-2xl font-bold tracking-tight text-white"
                 >
-                    Portfolio
+                    Folioblox
                 </motion.div>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                    <a href="#home" className="text-gray-400 hover:text-white transition-colors">
                         Home
                     </a>
                     <a href="#about" className="text-gray-400 hover:text-white transition-colors">
@@ -36,10 +36,12 @@ export function Navbar() {
                         href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-5 py-2.5 bg-orange-500 text-black font-medium rounded-full hover:bg-orange-400 transition-colors"
+                        className="flex items-center gap-3 pl-6 pr-2 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors"
                     >
                         Get in touch
-                        <ArrowRight size={16} />
+                        <div className="bg-orange-600 p-2 rounded-full flex items-center justify-center text-white">
+                            <ArrowRight size={18} strokeWidth={3} />
+                        </div>
                     </motion.a>
                 </div>
 
