@@ -21,12 +21,13 @@ export function Hero() {
                 <div className="flex-1 relative flex items-center justify-center">
 
                     {/* Left Text: Hey I'm a Creative */}
-                    <div className="absolute left-0 top-1/4 -translate-y-1/2 z-20 pointer-events-none">
+                    {/* Left Text: Hey I'm a Creative */}
+                    <div className="absolute left-0 top-[22%] z-20 pointer-events-none">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-white text-xl md:text-4xl font-medium mb-6 pl-4"
+                            className="text-white text-xl md:text-3xl font-medium mb-4 pl-4"
                         >
                             Hey, I'm a
                         </motion.p>
@@ -34,7 +35,7 @@ export function Hero() {
                             initial={{ opacity: 0, x: -40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="text-[6rem] md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-bold text-white tracking-tighter leading-[0.75]"
+                            className="text-[12vw] font-bold text-white tracking-tighter leading-none"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             Creative
@@ -74,16 +75,17 @@ export function Hero() {
                     </div>
 
                     {/* Center Image */}
+                    {/* Center Image */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1.2 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2, delay: 0.2 }}
-                        className="absolute top-0 left-1/2 -translate-x-1/2 h-[120vh] z-10 w-full max-w-5xl flex items-start justify-center pointer-events-none"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[80vh] md:h-[85vh] lg:h-[90vh] z-10 w-full max-w-5xl flex items-end justify-center pointer-events-none"
                     >
                         <img
                             src="/hero-image.png"
                             alt="Creative Director"
-                            className="h-full w-auto object-cover md:object-contain drop-shadow-2xl translate-y-[-5%]"
+                            className="h-full w-auto object-contain drop-shadow-2xl"
                         />
                     </motion.div>
                 </div>
