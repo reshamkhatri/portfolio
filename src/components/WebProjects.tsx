@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Globe, Layout, Monitor } from 'lucide-react';
 
@@ -30,18 +30,15 @@ const webProjects = [
 ];
 
 export function WebProjects() {
+    console.log('🌐 WebProjects component is rendering!');
     const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
 
     return (
-        <section ref={containerRef} id="web-projects" className="relative min-h-screen py-32 bg-[#050505] overflow-hidden z-30">
+        <section ref={containerRef} id="web-projects" className="relative min-h-screen py-32 bg-[#0a0a0a] overflow-visible" style={{ display: 'block', visibility: 'visible' }}>
             {/* Direct Background Color for debug */}
-            <div className="absolute inset-0 bg-[#050505]" />
+            <div className="absolute inset-0 bg-[#0a0a0a]" />
             {/* Top Border Divider */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
             {/* Background Glows */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px]" />
