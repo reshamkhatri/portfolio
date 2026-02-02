@@ -5,7 +5,7 @@ const testimonials = [
         author: {
             name: "Ajay KC",
             handle: "House of Jobs",
-            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+            avatar: "/ajay.jpg"
         },
         text: "The graphic design posts Resham created for House of Jobs brought in real customers. His work directly contributed to our growth!"
     },
@@ -13,7 +13,7 @@ const testimonials = [
         author: {
             name: "Ranjit Hamal",
             handle: "CBM College",
-            avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+            avatar: "/ranjit.jpg"
         },
         text: "The social media designs for CBM College were outstanding. Professional, eye-catching, and perfectly aligned with our brand."
     },
@@ -21,7 +21,7 @@ const testimonials = [
         author: {
             name: "Achal Acharya",
             handle: "Impulse Investment & Management",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+            avatar: "/achal.jpg"
         },
         text: "Resham's design work for Impulse Investment was exceptional. Creative, timely, and exactly what we needed to stand out."
     }
