@@ -1,83 +1,111 @@
 import { motion } from 'framer-motion';
 
+const services = [
+    { id: '01', title: 'Brand Strategy' },
+    { id: '02', title: 'Brand Identity Design' },
+    { id: '03', title: 'Packaging Design' },
+    { id: '04', title: 'Creative Direction' },
+];
+
 export function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-32 pb-20 px-6">
-            <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Content */}
-                <div>
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-orange-500 font-medium mb-4 tracking-wider uppercase text-sm">
-                            Creative Developer
-                        </h2>
-                        <h1
-                            className="text-6xl sm:text-7xl md:text-8xl font-bold text-white leading-[0.9] mb-8"
+        <section className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden flex flex-col justify-between">
+            {/* 1. Cinematic Background */}
+            <div className="absolute inset-0 cinematic-gradient opacity-80" />
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
+
+            {/* 2. Central Image (Masked) */}
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85vh] z-10 w-full max-w-2xl flex items-end justify-center pointer-events-none"
+            >
+                {/* Placeholder for user image - replaced with actual user image when available */}
+                <img
+                    src="/hero-image.png"
+                    alt="Creative Director"
+                    className="h-full w-auto object-contain image-mask-bottom drop-shadow-2xl"
+                />
+            </motion.div>
+
+            {/* 3. Typography Layer */}
+            <div className="relative z-20 h-full max-w-[1400px] mx-auto w-full px-6 md:px-12 flex flex-col justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-center h-full pt-20">
+
+                    {/* Left Text */}
+                    <div className="flex flex-col justify-center items-start">
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-white/80 text-xl md:text-2xl font-medium mb-2 pl-2"
+                        >
+                            Hey, I'm a
+                        </motion.p>
+                        <motion.h1
+                            initial={{ opacity: 0, x: -40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.6, duration: 0.8 }}
+                            className="text-8xl md:text-[10rem] font-bold text-white tracking-tighter leading-[0.85] text-glow mix-blend-overlay md:mix-blend-normal"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
-                            Crafting<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">
-                                Digital
-                            </span><br />
-                            Events.
-                        </h1>
-                        <p className="text-white/60 text-lg md:text-xl max-w-md leading-relaxed mb-10">
-                            I merge technical expertise with design sensibility to create immersive web experiences that leave a lasting impact.
-                        </p>
+                            Creative
+                        </motion.h1>
+                    </div>
 
-                        <div className="flex flex-wrap gap-4">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-colors"
-                            >
-                                View Projects
-                            </motion.button>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm"
-                            >
-                                Contact Me
-                            </motion.button>
-                        </div>
-                    </motion.div>
-                </div>
+                    {/* Right Text */}
+                    <div className="flex flex-col justify-center items-end md:items-start text-right md:text-left mt-20 md:mt-0">
+                        <div className="hidden md:block h-32" /> {/* Spacer to offset vertical alignment */}
+                        <motion.h1
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.8, duration: 0.8 }}
+                            className="text-8xl md:text-[10rem] font-bold text-white tracking-tighter leading-[0.85] text-glow relative z-30"
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                        >
+                            Director
+                        </motion.h1>
 
-                {/* Right Content - Abstract visual or Image */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="hidden lg:flex justify-center"
-                >
-                    {/* The 3D background will provide the visual interest here, 
-                        or we can place a floating card/image */}
-                    <div className="relative w-[400px] h-[500px] bg-white/5 border border-white/10 rounded-full backdrop-blur-sm p-4 flex items-center justify-center">
-                        <div className="w-full h-full rounded-full overflow-hidden relative">
-                            <img
-                                src="/hero-image.png"
-                                alt="Portrait"
-                                className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="mt-8 md:ml-4 max-w-sm">
+                            <motion.h3
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 1.2 }}
+                                className="text-2xl font-semibold text-white mb-2"
+                            >
+                                Great design should feel invisible.
+                            </motion.h3>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 1.4 }}
+                                className="text-white/60 text-sm"
+                            >
+                                From logo to language, I build brands that connect and convert.
+                            </motion.p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
-            >
-                <div className="w-[1px] h-20 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
-            </motion.div>
+            {/* 4. Footer Services Strips */}
+            <div className="relative z-30 w-full border-t border-white/10 bg-black/20 backdrop-blur-md">
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 py-6 gap-4">
+                    {services.map((service, i) => (
+                        <motion.div
+                            key={service.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1.5 + (i * 0.1) }}
+                            className="flex flex-col group cursor-pointer"
+                        >
+                            <span className="text-orange-500 font-bold text-sm mb-1 group-hover:text-white transition-colors">#{service.id}</span>
+                            <span className="text-white/80 text-sm font-medium group-hover:text-orange-500 transition-colors">{service.title}</span>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }
