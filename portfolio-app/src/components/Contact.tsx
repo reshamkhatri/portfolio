@@ -1,103 +1,86 @@
-import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export function Contact() {
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ['start end', 'end end']
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+
     return (
-        <section id="contact" className="py-24 bg-[#0a0a0a] border-t border-white/5">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                    {/* Left side - CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            Let's work<br />together
-                        </h2>
-                        <p className="text-gray-400 mb-8 max-w-md">
-                            Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing.
-                        </p>
+        <section
+            id="contact"
+            ref={container}
+            className="min-h-screen relative z-0 flex items-center justify-center bg-zinc-900 border-t border-white/10"
+        >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#ea580c_0%,transparent_50%)] opacity-20 blur-[100px]" />
 
-                        <motion.a
-                            href="mailto:hello@example.com"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
+            <div className="max-w-7xl mx-auto w-full px-6 relative z-10 py-32">
+                <div className="grid md:grid-cols-2 gap-20">
+                    <div>
+                        <motion.h2
+                            style={{ y }}
+                            className="text-[12vw] leading-[0.9] font-bold font-space text-white mb-12"
                         >
-                            <Mail size={20} />
-                            Get In Touch
-                        </motion.a>
+                            Let's<br />Talk
+                        </motion.h2>
 
-                        {/* Social Links */}
-                        <div className="flex gap-4 mt-8">
-                            {[
-                                { icon: Github, href: '#' },
-                                { icon: Linkedin, href: '#' },
-                                { icon: Twitter, href: '#' },
-                            ].map((social, i) => (
-                                <motion.a
-                                    key={i}
-                                    href={social.href}
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className="p-3 glass rounded-full text-gray-400 hover:text-white transition-colors"
-                                >
-                                    <social.icon size={20} />
-                                </motion.a>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Right side - Quick Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="glass p-8 rounded-2xl"
-                    >
-                        <form className="space-y-6">
+                        <div className="space-y-8">
                             <div>
-                                <label className="block text-sm text-gray-400 mb-2">Name</label>
+                                <h3 className="text-gray-400 uppercase tracking-widest text-sm mb-2">Socials</h3>
+                                <div className="flex flex-col gap-2 text-xl font-medium">
+                                    <a href="#" className="hover:text-orange-500 transition-colors">Instagram</a>
+                                    <a href="#" className="hover:text-orange-500 transition-colors">Twitter</a>
+                                    <a href="#" className="hover:text-orange-500 transition-colors">LinkedIn</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="text-gray-400 uppercase tracking-widest text-sm mb-2">Email</h3>
+                                <a href="mailto:hello@folio.com" className="text-xl font-medium hover:text-orange-500 transition-colors">
+                                    hello@folio.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-end">
+                        <form className="space-y-12">
+                            <div className="group relative">
                                 <input
                                     type="text"
-                                    placeholder="Your name"
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                                    placeholder="What's your name?"
+                                    className="w-full bg-transparent border-b border-white/20 py-4 text-2xl outline-none text-white placeholder:text-gray-600 focus:border-orange-500 transition-colors"
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm text-gray-400 mb-2">Email</label>
+                            <div className="group relative">
                                 <input
                                     type="email"
-                                    placeholder="your@email.com"
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                                    placeholder="Your email"
+                                    className="w-full bg-transparent border-b border-white/20 py-4 text-2xl outline-none text-white placeholder:text-gray-600 focus:border-orange-500 transition-colors"
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm text-gray-400 mb-2">Message</label>
+                            <div className="group relative">
                                 <textarea
-                                    placeholder="Tell me about your project..."
                                     rows={4}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                                    placeholder="Tell me about your project..."
+                                    className="w-full bg-transparent border-b border-white/20 py-4 text-2xl outline-none text-white placeholder:text-gray-600 focus:border-orange-500 transition-colors resize-none"
                                 />
                             </div>
-                            <motion.button
-                                type="submit"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full py-4 bg-orange-500 text-black font-semibold rounded-xl hover:bg-orange-400 transition-colors"
-                            >
+
+                            <button className="w-full py-6 bg-white text-black text-xl font-bold rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300">
                                 Send Message
-                            </motion.button>
+                            </button>
                         </form>
-                    </motion.div>
+                    </div>
                 </div>
 
-                {/* Footer */}
-                <div className="mt-24 pt-8 border-t border-white/5 text-center text-gray-500">
-                    <p>© 2024 Portfolio. All rights reserved.</p>
+                <div className="mt-32 flex justify-between items-end border-t border-white/10 pt-8">
+                    <p className="text-white/40">© 2026 Portfolio. All rights reserved.</p>
+                    <p className="text-white/40 text-[10vw] font-bold leading-none opacity-10">FOLIO</p>
                 </div>
             </div>
         </section>
