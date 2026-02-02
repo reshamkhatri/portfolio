@@ -9,6 +9,7 @@ import { Contact } from './components/Contact'
 import { Cursor } from './components/Cursor'
 import { Marquee } from './components/Marquee'
 import { AllProjects } from './components/AllProjects'
+import { Tools } from './components/Tools'
 
 function HomePage() {
     return (
@@ -17,6 +18,7 @@ function HomePage() {
             <Marquee />
             <About />
             <Projects />
+            <Tools />
             <Testimonials />
             <Contact />
         </main>
