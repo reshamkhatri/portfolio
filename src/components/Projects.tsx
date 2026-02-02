@@ -52,13 +52,14 @@ export function Projects() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const { cylinderWidth, faceWidth, radius, height } = useMemo(() => {
+    const faceCount = featuredProjects.length;
+
+    const { faceWidth, radius, height } = useMemo(() => {
         const isMobile = windowWidth < 768;
         const cw = isMobile ? 1200 : 2000;
         const fw = isMobile ? 280 : 380;
         const h = isMobile ? 380 : 480;
         return {
-            cylinderWidth: cw,
             faceWidth: fw,
             radius: cw / (2 * Math.PI),
             height: h
