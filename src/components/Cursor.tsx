@@ -28,28 +28,16 @@ export function Cursor() {
     }
 
     return (
-        <>
-            {/* Main Dot - Instant follow (visualized by stiff spring or direct) */}
-            <motion.div
-                className="fixed top-0 left-0 w-3 h-3 rounded-full bg-white mix-blend-difference pointer-events-none z-[9999]"
-                style={{
-                    translateX: cursorX, // Direct binding for instant feel, or use very stiff spring
-                    translateY: cursorY,
-                    x: -6, // Centre offset
-                    y: -6
-                }}
-            />
-
-            {/* Trailing Ring - Smooth follow */}
-            <motion.div
-                className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white/50 pointer-events-none z-[9999]"
-                style={{
-                    translateX: cursorXSpring,
-                    translateY: cursorYSpring,
-                    x: -16, // Centre offset
-                    y: -16
-                }}
-            />
-        </>
+        <motion.div
+            className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white/30 mix-blend-difference pointer-events-none z-[9999] flex items-center justify-center"
+            style={{
+                translateX: cursorXSpring,
+                translateY: cursorYSpring,
+                x: -16,
+                y: -16
+            }}
+        >
+            <div className="w-1.5 h-1.5 rounded-full bg-white" />
+        </motion.div>
     );
 }
