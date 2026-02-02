@@ -13,8 +13,8 @@ export function About() {
         <section id="about" className="relative z-10 py-32 px-6 bg-[#0a0a0a] overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[150px] -translate-y-1/2" />
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-[100px]" />
+                <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[80px] -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-[60px]" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
@@ -107,7 +107,7 @@ export function About() {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                                 whileHover={{ y: -5, scale: 1.02 }}
-                                className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300"
+                                className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300"
                             >
                                 <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-red-500/30 transition-colors">
                                     <skill.icon className="w-6 h-6 text-orange-400" />

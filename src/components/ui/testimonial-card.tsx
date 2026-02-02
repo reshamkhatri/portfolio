@@ -27,7 +27,7 @@ export function TestimonialCard({
             {...(href ? { href } : {})}
             className={cn(
                 "flex flex-col rounded-xl border border-white/10",
-                "bg-white/5 backdrop-blur-md",
+                "bg-white/10",
                 "p-6 text-start",
                 "hover:bg-white/10 hover:border-white/20",
                 "max-w-[320px] sm:max-w-[400px]",

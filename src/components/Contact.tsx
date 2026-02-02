@@ -6,8 +6,8 @@ export function Contact() {
         <section id="contact" className="relative z-10 py-32 px-6 bg-[#050505] overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[120px]" />
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[60px]" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[60px]" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -74,7 +74,7 @@ export function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-10"
+                        className="bg-[#0f0f0f] border border-white/10 rounded-[2rem] p-8 md:p-10"
                     >
                         <form className="space-y-8">
                             <div>
