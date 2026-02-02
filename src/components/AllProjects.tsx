@@ -3,19 +3,18 @@ import { ArrowLeft, Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from 
 import { Link } from 'react-router-dom'
 
 const allProjects = [
-    { id: 1, image: '/arbipos.jpg', title: "ArbiPOS", caption: "ArbiPOS branding and promotional design 🚀" },
-    { id: 2, image: '/dashainw.jpg', title: "Dashain Campaign", caption: "Dashain festive campaign graphics 🎉" },
-    { id: 3, image: '/ekoh post.jpg', title: "Ekoh Post", caption: "Ekoh social media brand communication 📱" },
-    { id: 4, image: '/furniturere.jpg', title: "Furniture Brand", caption: "Luxury furniture brand social media layout 🛋️" },
-    { id: 5, image: '/studyinuk.png', title: "Study in UK", caption: "Educational consultancy promotional material 🎓" },
-    { id: 6, image: '/bhai tika impuslse.png', title: "Bhai Tika", caption: "Bhai Tika festival greetings for Impulse 🌸" },
-    { id: 7, image: '/BBM.png', title: "BBM Project", caption: "BBM course promotional design 📚" },
-    { id: 8, image: '/CBM.png', title: "CBM Project", caption: "CBM educational graphics 🖊️" },
-    { id: 9, image: '/abhishesk.jpg', title: "Commercial Work", caption: "Creative commercial banner design 🎨" },
-    { id: 10, image: '/hiring delivery person.png', title: "Hiring Ad", caption: "Modern recruitment graphics 📦" },
-    { id: 11, image: '/hring for europe.png', title: "International Brand", caption: "Overseas recruitment campaign layout 🌍" },
-    { id: 12, image: '/niggatmi.jpg', title: "Art Concept", caption: "Expressive digital art and copy 🌟" },
-    { id: 13, image: '/first post.png', title: "Social Graphic", caption: "Minimalist first impression post design ✨" },
+    { id: 2, image: '/dashainw.jpg', title: "Dashain Campaign" },
+    { id: 3, image: '/ekoh post.jpg', title: "Ekoh Post" },
+    { id: 4, image: '/furniturere.jpg', title: "Furniture Brand" },
+    { id: 5, image: '/studyinuk.png', title: "Study in UK" },
+    { id: 6, image: '/bhai tika impuslse.png', title: "Bhai Tika" },
+    { id: 7, image: '/BBM.png', title: "BBM Project" },
+    { id: 8, image: '/CBM.png', title: "CBM Project" },
+    { id: 9, image: '/abhishesk.jpg', title: "Commercial Work" },
+    { id: 10, image: '/hiring delivery person.png', title: "Hiring Ad" },
+    { id: 11, image: '/hring for europe.png', title: "International Brand" },
+    { id: 12, image: '/niggatmi.jpg', title: "Art Concept" },
+    { id: 13, image: '/first post.png', title: "Social Graphic" },
 ];
 
 export function AllProjects() {
@@ -44,7 +43,7 @@ export function AllProjects() {
                             className="flex justify-center"
                         >
                             {/* Instagram Mockup Card */}
-                            <div className="bg-white rounded-xl overflow-hidden shadow-2xl flex flex-col text-black font-sans max-w-[400px] w-full">
+                            <div className="bg-white rounded-xl overflow-hidden shadow-2xl flex flex-col text-black font-sans max-w-[400px] w-full transition-transform hover:scale-[1.02] duration-300">
                                 {/* Header */}
                                 <div className="px-4 py-3 flex items-center justify-between border-b border-gray-100">
                                     <div className="flex items-center gap-3">

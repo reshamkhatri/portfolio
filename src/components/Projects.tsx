@@ -5,12 +5,6 @@ import { ArrowRight, Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from
 
 const featuredProjects = [
     {
-        id: 1,
-        image: '/arbipos.jpg',
-        title: "ArbiPOS",
-        caption: "Branding & promotional design"
-    },
-    {
         id: 2,
         image: '/dashainw.jpg',
         title: "Dashain Campaign",
@@ -33,6 +27,12 @@ const featuredProjects = [
         image: '/studyinuk.png',
         title: "Study in UK",
         caption: "Promotional design"
+    },
+    {
+        id: 6,
+        image: '/bhai tika impuslse.png',
+        title: "Bhai Tika",
+        caption: "Festival campaign"
     }
 ];
 
@@ -52,7 +52,7 @@ export function Projects() {
 
     const cylinderWidth = 2000;
     const faceCount = featuredProjects.length;
-    const faceWidth = 400; // Fixed width for Instagram card look
+    const faceWidth = 380; // Slightly smaller to ensure fit
     const radius = cylinderWidth / (2 * Math.PI);
 
     const rotation = useTransform(smoothScroll, [0, 1], [0, -360]);
@@ -64,18 +64,21 @@ export function Projects() {
             className="relative bg-[#0a0a0a] z-10"
             style={{ height: '300vh' }}
         >
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
+            {/* Sticky Container */}
+            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-start py-10 overflow-visible px-4 md:px-6">
 
+                {/* Background Glow */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-[150px]" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[150px]" />
                 </div>
 
-                <div className="max-w-7xl mx-auto w-full">
+                <div className="max-w-7xl mx-auto w-full relative z-20">
+                    {/* Section Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center mb-10"
+                        className="text-center mb-8"
                     >
                         <h2 className="text-4xl md:text-6xl font-bold font-space mb-4">
                             Social Media
@@ -86,7 +89,8 @@ export function Projects() {
                         </p>
                     </motion.div>
 
-                    <div className="relative h-[600px] flex items-center justify-center" style={{ perspective: '2000px' }}>
+                    {/* 3D Carousel Container */}
+                    <div className="relative h-[480px] flex items-center justify-center mb-10" style={{ perspective: '2000px' }}>
                         <motion.div
                             style={{
                                 rotateY: rotation,
@@ -151,14 +155,15 @@ export function Projects() {
                         </motion.div>
                     </div>
 
-                    <div className="flex justify-center mt-10">
+                    {/* View All Button */}
+                    <div className="flex justify-center relative z-30">
                         <Link
                             to="/projects"
-                            className="group relative px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full overflow-hidden transition-all hover:border-orange-500/50 flex items-center gap-3"
+                            className="group relative px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full overflow-hidden transition-all hover:border-orange-500/50 flex items-center gap-3 shadow-xl hover:shadow-orange-500/20"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity" />
-                            <span className="text-white text-sm font-semibold">View All Projects</span>
-                            <ArrowRight className="w-4 h-4 text-orange-500 transition-transform group-hover:translate-x-1" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-20 transition-opacity" />
+                            <span className="text-white text-sm font-semibold relative z-10">View All Projects</span>
+                            <ArrowRight className="w-4 h-4 text-orange-400 transition-transform group-hover:translate-x-1 relative z-10" />
                         </Link>
                     </div>
                 </div>
