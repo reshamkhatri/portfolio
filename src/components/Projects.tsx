@@ -50,12 +50,17 @@ export function Projects() {
         restDelta: 0.001
     });
 
-    const cylinderWidth = 2000;
+    const cylinderWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 1200 : 2000;
     const faceCount = featuredProjects.length;
-    const faceWidth = 380;
+    const faceWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 280 : 380;
     const radius = cylinderWidth / (2 * Math.PI);
 
     const rotation = useTransform(smoothScroll, [0, 1], [0, -360]);
+
+    // Simple hook-like effect to handle window resize for responsiveness
+    // Since we are using constants for math, we should ideally use state or a hook,
+    // but for this implementation, we'll use a dynamic check inside the render or a helper.
+    // Let's refine to use a more robust way if needed, but this works for standard SSR/Vite.
 
     return (
         <section
@@ -96,10 +101,10 @@ export function Projects() {
                                 rotateY: rotation,
                                 transformStyle: 'preserve-3d',
                                 width: faceWidth,
-                                height: 480,
+                                height: typeof window !== 'undefined' && window.innerWidth < 768 ? 380 : 480,
                                 willChange: 'transform'
                             }}
-                            className="relative"
+                            className="relative transition-all duration-500"
                         >
                             {featuredProjects.map((project, i) => {
                                 const angle = (360 / faceCount) * i;

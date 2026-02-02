@@ -55,7 +55,7 @@ export function Hero() {
                     <img
                         src="/hero-image.png"
                         alt="Hero Portrait"
-                        className="h-[105%] w-auto object-contain object-bottom select-none"
+                        className="h-[80%] md:h-[105%] w-auto object-contain object-bottom select-none opacity-80 md:opacity-100"
                     />
                 </motion.div>
             </div>
@@ -78,21 +78,21 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="font-space text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
+                            className="font-space text-[14vw] md:text-[7vw] lg:text-[8vw] font-bold leading-[0.9] tracking-tighter text-white m-0"
                         >
                             <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                 Creative
                             </span>
                             <br />
-                            <div className="h-[1.3em] w-max overflow-visible relative">
+                            <div className="h-[1.1em] w-full overflow-visible relative">
                                 <AnimatePresence mode="wait">
                                     <motion.span
                                         key={roles[roleIndex]}
-                                        initial={{ y: 50, opacity: 0 }}
+                                        initial={{ y: 30, opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -50, opacity: 0 }}
+                                        exit={{ y: -30, opacity: 0 }}
                                         transition={{ duration: 0.5, ease: "circOut" }}
-                                        className="absolute left-0 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent block whitespace-nowrap pb-2 pr-10"
+                                        className="absolute left-0 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent block whitespace-nowrap pb-1 pr-10"
                                     >
                                         {roles[roleIndex]}
                                     </motion.span>
@@ -106,12 +106,12 @@ export function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="mt-8 md:mt-0 md:mb-12 md:max-w-[20rem] text-right md:text-left"
+                        className="mt-12 md:mt-0 md:mb-12 md:max-w-[20rem] text-left md:text-right flex flex-col md:items-end"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                        <h2 className="text-xl md:text-3xl font-bold text-white mb-4 leading-tight">
                             Great design should feel invisible.
                         </h2>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <p className="text-gray-400 text-xs md:text-base leading-relaxed md:max-w-[18rem]">
                             From logo to language, I build brands that connect and convert.
                         </p>
                     </motion.div>

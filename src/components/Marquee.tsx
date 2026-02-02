@@ -12,11 +12,11 @@ export function Marquee() {
                     style={{ '--duration': '30s' } as React.CSSProperties}
                 >
                     {[...servicesList, ...servicesList].map((service, i) => (
-                        <div key={i} className="flex items-center gap-16">
-                            <span className="text-4xl md:text-6xl font-bold font-space text-white/10 uppercase tracking-widest">
+                        <div key={i} className="flex items-center gap-8 md:gap-16">
+                            <span className="text-2xl md:text-6xl font-bold font-space text-white/10 uppercase tracking-widest">
                                 {service}
                             </span>
-                            <div className="w-2 h-2 rounded-full bg-orange-500/20" />
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-orange-500/20" />
                         </div>
                     ))}
                 </div>

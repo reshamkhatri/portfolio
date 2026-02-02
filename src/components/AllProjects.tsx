@@ -29,11 +29,11 @@ export function AllProjects() {
                     Back to Portfolio
                 </Link>
 
-                <h1 className="text-4xl md:text-6xl font-bold font-space mb-16">
+                <h1 className="text-3xl md:text-6xl font-bold font-space mb-8 md:mb-16">
                     All <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Designs</span>
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                     {allProjects.map((project) => (
                         <motion.div
                             key={project.id}

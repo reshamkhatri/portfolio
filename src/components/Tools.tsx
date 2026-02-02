@@ -98,7 +98,7 @@ export function Tools() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
                     {tools.map((tool, i) => (
                         <motion.div
                             key={tool.name}
@@ -110,7 +110,7 @@ export function Tools() {
                                 y: -10,
                                 scale: 1.05,
                             }}
-                            className="group relative p-8 rounded-[2rem] bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:bg-white/10 hover:border-white/20"
+                            className="group relative p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-3 md:gap-4 transition-all duration-300 hover:bg-white/10 hover:border-white/20"
                         >
                             {/* Glow Effect */}
                             <div
