@@ -134,8 +134,8 @@ export function Projects() {
                                             </div>
 
                                             {/* Footer */}
-                                            <div className="p-4">
-                                                <div className="flex items-center justify-between mb-3">
+                                            <div className="p-4 pt-1">
+                                                <div className="flex items-center justify-between">
                                                     <div className="flex items-center gap-4">
                                                         <Heart className="w-6 h-6 hover:text-red-500 cursor-pointer transition-colors" />
                                                         <MessageCircle className="w-6 h-6 hover:text-gray-500 cursor-pointer transition-colors" />
@@ -143,12 +143,6 @@ export function Projects() {
                                                     </div>
                                                     <Bookmark className="w-6 h-6 hover:text-gray-500 cursor-pointer transition-colors" />
                                                 </div>
-                                                <p className="text-sm font-bold mb-1">1,234 likes</p>
-                                                <p className="text-sm">
-                                                    <span className="font-bold mr-2">resham.khatri</span>
-                                                    {project.caption}
-                                                </p>
-                                                <p className="text-[10px] text-gray-400 uppercase mt-2">2 HOURS AGO</p>
                                             </div>
                                         </div>
                                     </motion.div>
