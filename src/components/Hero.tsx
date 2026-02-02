@@ -1,12 +1,80 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const roles = ["Creator", "Designer", "Artist", "Strategist"];
 
 export function Hero() {
+    const [roleIndex, setRoleIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
-            {/* Background Glow Effects */}
+            {/* Animated Background Glow Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] opacity-90 blur-[100px]" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_40%)] opacity-80 blur-[100px]" />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.7, 0.9, 0.7],
+                        x: [0, 50, 0],
+                        y: [0, -30, 0],
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] blur-[100px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.6, 0.8, 0.6],
+                        x: [0, -40, 0],
+                        y: [0, 40, 0],
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_40%)] blur-[100px]"
+                />
+            </div>
+
+            {/* Floating Glass Elements */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+                {[...Array(4)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{
+                            x: Math.random() * 100 + "%",
+                            y: Math.random() * 100 + "%",
+                            opacity: 0
+                        }}
+                        animate={{
+                            y: [null, "-20%", "20%"],
+                            x: [null, "10%", "-10%"],
+                            rotate: [0, 45, 0],
+                            opacity: 0.15
+                        }}
+                        transition={{
+                            duration: 15 + i * 5,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                        className="absolute w-32 h-32 md:w-64 md:h-64 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10"
+                        style={{
+                            left: `${i * 25}%`,
+                            top: `${(i % 2) * 40}%`,
+                        }}
+                    />
+                ))}
             </div>
 
             {/* Central Hero Image */}
@@ -45,8 +113,37 @@ export function Hero() {
                             transition={{ duration: 1, delay: 0.4 }}
                             className="font-space text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
                         >
-                            Creative<br />
-                            <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Creator</span>
+                            <motion.span
+                                animate={{
+                                    textShadow: [
+                                        "0 0 0px rgba(255,255,255,0)",
+                                        "0 0 20px rgba(255,255,255,0.3)",
+                                        "0 0 0px rgba(255,255,255,0)"
+                                    ]
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                Creative
+                            </motion.span>
+                            <br />
+                            <div className="h-[1.1em] overflow-hidden relative">
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        key={roles[roleIndex]}
+                                        initial={{ y: 50, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -50, opacity: 0 }}
+                                        transition={{ duration: 0.5, ease: "circOut" }}
+                                        className="absolute left-0 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent block"
+                                    >
+                                        {roles[roleIndex]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </div>
                         </motion.h1>
                     </div>
 
