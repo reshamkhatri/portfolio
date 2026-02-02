@@ -1,86 +1,79 @@
 import { motion } from 'framer-motion';
 
-const testimonials = [
-    {
-        name: 'Sarah Johnson',
-        role: 'Small Business Owner',
-        image: 'https://i.pravatar.cc/100?img=1',
-        text: "Since integrating this solution into our workflow, we've experienced a significant improvement in efficiency and collaboration.",
-    },
-    {
-        name: 'David Patel',
-        role: 'Project Manager',
-        image: 'https://i.pravatar.cc/100?img=3',
-        text: "I've tested numerous options in this category, but one stands out for its intuitive design and comprehensive functionality.",
-        featured: true,
-    },
-    {
-        name: 'Emily Carter',
-        role: 'Operations Manager',
-        image: 'https://i.pravatar.cc/100?img=5',
-        text: "The tool we've adopted has surpassed our expectations, providing invaluable insights and support as our business continues to grow.",
-    },
-];
-
 export function Testimonials() {
     return (
-        <section className="py-24 gradient-testimonial relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" />
+        <section className="py-32 px-6 bg-[#0a0a0a]">
+            {/* Background Decor */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-red-500/10 rounded-full blur-[100px]" />
+            </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">What people say</h2>
-                    <p className="text-gray-400 max-w-md mx-auto">
-                        Discover what our satisfied customers have to say about their experiences with our products/services.
-                    </p>
-                </motion.div>
+            <div className="relative z-10 max-w-7xl mx-auto">
+                <div className="text-center mb-20">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-5xl md:text-6xl font-bold mb-6 font-space"
+                    >
+                        What people say
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-gray-400 text-lg max-w-2xl mx-auto"
+                    >
+                        Discover what our satisfied customers have to say about their experiences with our creative solutions.
+                    </motion.p>
+                </div>
 
-                {/* Testimonial Cards */}
-                <div className="grid md:grid-cols-3 gap-6">
-                    {testimonials.map((testimonial, i) => (
+                <div className="grid md:grid-cols-3 gap-8">
+                    {[
+                        {
+                            name: "Sarah Johnson",
+                            role: "Small Business Owner",
+                            quote: "Since integrating this solution into our workflow, we've experienced a significant improvement in efficiency and collaboration."
+                        },
+                        {
+                            name: "David Patel",
+                            role: "Project Manager",
+                            quote: "I've tested numerous options in this category, but one stands out for its intuitive design and comprehensive functionality."
+                        },
+                        {
+                            name: "Emily Carter",
+                            role: "Operations Manager",
+                            quote: "The tool we've adopted has surpassed our expectations, providing invaluable insights and support as our business continues to grow."
+                        }
+                    ].map((testimonial, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            whileHover={{ y: -5, scale: 1.02 }}
-                            className={`relative p-6 rounded-2xl glass ${testimonial.featured
-                                    ? 'border-purple-500/30 shadow-xl shadow-purple-500/10'
-                                    : 'border-white/5'
-                                }`}
+                            transition={{ delay: i * 0.2 }}
+                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300"
                         >
-                            {/* Gradient border effect for featured */}
-                            {testimonial.featured && (
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
-                            )}
-
-                            <div className="relative z-10">
-                                {/* Avatar and info */}
-                                <div className="flex items-center gap-4 mb-4">
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
-                                    />
+                            <div className="flex flex-col h-full">
+                                {/* Avatar & Info */}
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-xl font-bold">
+                                        {testimonial.name[0]}
+                                    </div>
                                     <div>
-                                        <h3 className="font-semibold text-white">{testimonial.name}</h3>
+                                        <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                                            {testimonial.name}
+                                        </h3>
                                         <p className="text-sm text-gray-400">{testimonial.role}</p>
                                     </div>
                                 </div>
 
-                                {/* Testimonial text */}
-                                <p className="text-gray-300 leading-relaxed">
-                                    {testimonial.text}
+                                <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-transparent mb-6 opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                                <p className="text-gray-300 leading-relaxed text-lg">
+                                    "{testimonial.quote}"
                                 </p>
                             </div>
                         </motion.div>
