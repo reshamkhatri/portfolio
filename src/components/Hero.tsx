@@ -9,7 +9,7 @@ const services = [
 
 export function Hero() {
     return (
-        <section className="relative min-h-screen gradient-hero overflow-hidden">
+        <div className="relative min-h-screen gradient-hero overflow-hidden">
             {/* Hero Image in center - behind text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <motion.div
@@ -18,7 +18,6 @@ export function Hero() {
                     transition={{ duration: 1.2, delay: 0.3 }}
                     className="relative"
                 >
-                    {/* Circular glow effect where image will go */}
                     {/* Hero Image */}
                     <div className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] rounded-full flex items-center justify-center relative z-10">
                         <img
@@ -76,12 +75,7 @@ export function Hero() {
                 </div>
 
                 {/* Services Footer */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-6 border-t border-white/10 mt-auto"
-                >
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-6 border-t border-white/10 mt-auto">
                     {services.map((service, i) => (
                         <div key={i} className="group cursor-pointer">
                             <span className="text-orange-500 text-xs md:text-sm font-medium">#{service.num}</span>
@@ -90,8 +84,8 @@ export function Hero() {
                             </p>
                         </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
-        </section>
+        </div>
     );
 }

@@ -3,8 +3,8 @@ import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
 
 export function Contact() {
     return (
-        <section id="contact" className="py-32 bg-[#0a0a0a] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <div id="contact" className="py-32 px-6">
+            <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     {/* Left side - CTA */}
                     <motion.div
@@ -100,9 +100,9 @@ export function Contact() {
 
                 {/* Footer */}
                 <div className="mt-20 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-                    <p>© 2026 Portfolio. All rights reserved. (v1.4)</p>
+                    <p>© 2026 Portfolio. All rights reserved. (v1.5)</p>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

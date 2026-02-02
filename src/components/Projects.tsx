@@ -26,8 +26,8 @@ const projects = [
 
 export function Projects() {
     return (
-        <section id="projects" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <div id="projects" className="py-24 px-6">
+            <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export function Projects() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected Work</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Selected Work</h2>
                     <p className="text-gray-400 max-w-md">
                         A collection of projects showcasing my skills in design and development.
                     </p>
@@ -51,7 +51,7 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className="group relative"
+                            className="group"
                         >
                             {/* Image Container */}
                             <div className="relative overflow-hidden rounded-2xl aspect-video bg-gray-900">
@@ -84,7 +84,7 @@ export function Projects() {
 
                             {/* Project Info */}
                             <div className="mt-4">
-                                <h3 className="text-xl font-semibold group-hover:text-orange-500 transition-colors">
+                                <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
                                     {project.title}
                                 </h3>
                                 <p className="text-gray-400">{project.category}</p>
@@ -93,6 +93,6 @@ export function Projects() {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
