@@ -5,8 +5,8 @@ export function Hero() {
         <section className="relative min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
             {/* Background Glow Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] opacity-60 blur-2xl" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_40%)] opacity-50 blur-2xl" />
+                <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_50%)] opacity-90 blur-[100px]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,#f97316_0%,transparent_40%)] opacity-80 blur-[100px]" />
             </div>
 
             {/* Central Hero Image */}
@@ -43,7 +43,7 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
+                            className="font-space text-[10vw] md:text-[7vw] lg:text-[8vw] font-bold leading-none tracking-tighter text-white m-0"
                         >
                             Creative<br />
                             <span className="text-white">Director</span>
