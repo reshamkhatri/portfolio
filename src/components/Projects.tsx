@@ -4,21 +4,39 @@ import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from 'lucide-rea
 const projects = [
     {
         id: 1,
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop',
+        image: '/arbipos.jpg',
         likes: 124,
-        caption: "Minimalist brand identity design for a tech startup. 🚀 #branding #design"
+        caption: "ArbiPOS branding and promotional design 🚀"
     },
     {
         id: 2,
-        image: 'https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=1000&auto=format&fit=crop',
+        image: '/dashainw.jpg',
         likes: 89,
-        caption: "Social media campaign graphics that convert. 📈 #marketing #graphics"
+        caption: "Dashain festive campaign graphics 🎉"
     },
     {
         id: 3,
-        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
+        image: '/ekoh post.jpg',
         likes: 256,
-        caption: "Modern UI/UX concept for a travel app. ✈️ #uiux #appdesign"
+        caption: "Ekoh social media post design 🌿"
+    },
+    {
+        id: 4,
+        image: '/furniturere.jpg',
+        likes: 142,
+        caption: "Furniture brand campaign 🪑"
+    },
+    {
+        id: 5,
+        image: '/studyinuk.png',
+        likes: 198,
+        caption: "Study in UK promotional design 🇬🇧"
+    },
+    {
+        id: 6,
+        image: '/bhai tika impuslse.png',
+        likes: 175,
+        caption: "Bhai Tika festival campaign 🎊"
     }
 ];
 
