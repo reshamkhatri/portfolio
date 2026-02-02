@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* Tailwind v4: Define custom animations in @theme block */
+@theme {
+  --animate-marquee: marquee var(--duration) linear infinite;
+}
+
+/* Marquee keyframes */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --glass-border: rgba(255, 255, 255, 0.1);
