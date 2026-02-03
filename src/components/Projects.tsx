@@ -170,11 +170,7 @@ export function Projects() {
                                                     loading="lazy"
                                                     className="w-full h-full object-cover"
                                                 />
-                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    <span className="text-white font-bold tracking-widest uppercase text-sm border border-white px-4 py-2 rounded-full">
-                                                        View Story
-                                                    </span>
-                                                </div>
+
                                             </div>
 
                                             {/* Footer */}
