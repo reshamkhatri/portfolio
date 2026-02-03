@@ -55,21 +55,21 @@ export function Hero() {
                     <img
                         src="/hero-image.png"
                         alt="Hero Portrait"
-                        className="h-[80%] md:h-[105%] w-auto object-contain object-bottom select-none opacity-80 md:opacity-100"
+                        className="h-[65%] md:h-[105%] w-auto object-contain object-bottom select-none opacity-60 md:opacity-100"
                     />
                 </motion.div>
             </div>
 
             {/* Main Content Layer */}
-            <div className="relative z-20 max-w-7xl mx-auto min-h-screen flex flex-col justify-center pb-20">
+            <div className="relative z-20 max-w-7xl mx-auto min-h-screen flex flex-col justify-center pb-12 md:pb-20 px-4 md:px-6">
                 {/* Headline Section */}
                 <div className="relative flex flex-col md:flex-row items-end justify-between w-full">
-                    <div className="relative z-30">
+                    <div className="relative z-30 w-full md:w-auto">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-xl md:text-2xl text-white/80 font-medium mb-2"
+                            className="text-lg md:text-2xl text-white/80 font-medium mb-2"
                         >
                             Hey, I'm <span className="text-orange-400 font-bold">Resham KC</span>
                         </motion.p>
@@ -78,7 +78,7 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="font-space text-[14vw] md:text-[7vw] lg:text-[8vw] font-bold leading-[0.9] tracking-tighter text-white m-0"
+                            className="font-space text-[13vw] md:text-[7vw] lg:text-[8vw] font-bold leading-[0.9] tracking-tighter text-white m-0"
                         >
                             <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                 Creative
@@ -106,12 +106,12 @@ export function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="mt-12 md:mt-0 md:mb-12 md:max-w-[20rem] text-left md:text-right flex flex-col md:items-end"
+                        className="mt-8 md:mt-0 md:mb-12 md:max-w-[20rem] text-left md:text-right flex flex-col md:items-end w-full md:w-auto"
                     >
-                        <h2 className="text-xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                        <h2 className="text-lg md:text-3xl font-bold text-white mb-3 md:mb-4 leading-tight">
                             Great design should feel invisible.
                         </h2>
-                        <p className="text-gray-400 text-xs md:text-base leading-relaxed md:max-w-[18rem]">
+                        <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-[90%] md:max-w-[18rem]">
                             From logo to language, I build brands that connect and convert.
                         </p>
                     </motion.div>

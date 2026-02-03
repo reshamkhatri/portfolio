@@ -27,7 +27,7 @@ export function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-            className={`fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 px-6 py-3 rounded-2xl transition-all duration-500 ${scrolled
+            className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 px-6 py-3 rounded-2xl transition-all duration-500 ${scrolled
                 ? 'bg-[#0a0a0a]/90 border border-white/10 shadow-2xl shadow-black/50'
                 : 'bg-white/10 border border-white/5 shadow-xl'
                 }`}
