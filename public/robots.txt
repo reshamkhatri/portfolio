@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reshamportfolio.vercel.app/sitemap.xml

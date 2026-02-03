@@ -7,6 +7,9 @@ import { Cursor } from './components/Cursor'
 import { AllProjects } from './components/AllProjects'
 import { WebProjects } from './components/WebProjects'
 import { Projects } from './components/Projects'
+import { ScrollProgress } from './components/ui/ScrollProgress'
+import { ScrollToTop } from './components/ui/ScrollToTop'
+import { NotFound } from './pages/NotFound'
 
 // Lazy load non-critical sections
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })))
@@ -42,12 +45,15 @@ function HomePage() {
 function App() {
     return (
         <div className="min-h-screen bg-[#0a0a0a] cursor-none">
+            <ScrollProgress />
+            <ScrollToTop />
             <div className="bg-grain" />
             <Cursor />
             <Navbar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/projects" element={<AllProjects />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     )
