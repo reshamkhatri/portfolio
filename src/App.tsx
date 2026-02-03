@@ -44,7 +44,7 @@ function HomePage() {
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#0a0a0a] cursor-none relative">
+        <div className="min-h-screen bg-[#0a0a0a] cursor-none">
             <ScrollProgress />
             <ScrollToTop />
             <div className="bg-grain" />
