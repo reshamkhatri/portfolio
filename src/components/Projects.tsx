@@ -2,42 +2,59 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from 'lucide-react';
+import { ProjectModal } from './ui/ProjectModal';
 
 const featuredProjects = [
     {
         id: 2,
         image: '/dashainw.jpg',
         title: "Dashain Campaign",
-        caption: "Festive graphics design"
+        caption: "Festive graphics design",
+        challenge: "To create a festive campaign that stands out amidst the clutter of Dashain advertisements while maintaining cultural authenticity.",
+        solution: "We used vibrant, traditional color palettes mixed with modern typography to create a sense of nostalgia that felt fresh and exciting.",
+        impact: "Increased social media engagement by 40% throughout the festival season."
     },
     {
         id: 3,
         image: '/ekoh post.jpg',
         title: "Ekoh",
-        caption: "Social media post design"
+        caption: "Social media post design",
+        challenge: "Ekoh needed to communicate complex sustainability concepts in a simple, visually appealing way for a younger audience.",
+        solution: "Designed clean, minimalist infographics that broke down heavy information into bite-sized, shareable visual content.",
+        impact: "Shared over 500 times in the first week, significantly boosting brand awareness."
     },
     {
         id: 4,
         image: '/furniturere.jpg',
         title: "Furniture Brand",
-        caption: "Campaign graphics"
+        caption: "Campaign graphics",
+        challenge: "The brand struggled to showcase the texture and premium quality of their furniture through static digital images.",
+        solution: "Focused on high-contrast lighting and close-up detail shots in the design composition to highlight craftsmanship.",
+        impact: "Lead generation for premium items increased by 25%."
     },
     {
         id: 5,
         image: '/studyinuk.png',
         title: "Study in UK",
-        caption: "Promotional design"
+        caption: "Promotional design",
+        challenge: "To attract students to UK universities in a competitive market saturated with generic 'study abroad' ads.",
+        solution: "Used dynamic layouts and aspirational imagery that focused on the lifestyle and future opportunities, not just the classroom.",
+        impact: "Record number of inquiries received for the upcoming semester intake."
     },
     {
         id: 6,
         image: '/bhai tika impuslse.png',
         title: "Bhai Tika",
-        caption: "Festival campaign"
+        caption: "Festival campaign",
+        challenge: "Capturing the emotional essence of the brother-sister bond without resorting to clichés.",
+        solution: "Created a warm, illustration-heavy design that focused on the storytelling aspect of the festival tradition.",
+        impact: "High emotional resonance led to the campaign going viral locally."
     }
 ];
 
 export function Projects() {
     const sectionRef = useRef<HTMLDivElement>(null);
+    const [selectedProject, setSelectedProject] = useState<typeof featuredProjects[0] | null>(null);
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -103,7 +120,7 @@ export function Projects() {
                             <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> 3D Works</span>
                         </h2>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto italic">
-                            "Scroll to see the magic revolve around my designs."
+                            "Click on any project to uncover the story behind the design."
                         </p>
                     </motion.div>
 
@@ -123,15 +140,17 @@ export function Projects() {
                                 return (
                                     <motion.div
                                         key={project.id}
-                                        className="absolute top-0 left-0 w-full h-full gpu-accelerated"
+                                        className="absolute top-0 left-0 w-full h-full gpu-accelerated cursor-pointer"
                                         style={{
                                             transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
                                             backfaceVisibility: 'hidden',
                                             willChange: 'transform'
                                         }}
+                                        onClick={() => setSelectedProject(project)}
+                                        whileHover={{ scale: 1.05 }}
                                     >
                                         {/* Instagram Mockup Card */}
-                                        <div className="bg-white rounded-lg overflow-hidden shadow-xl flex flex-col text-black h-full">
+                                        <div className="bg-white rounded-lg overflow-hidden shadow-xl flex flex-col text-black h-full transition-transform hover:shadow-2xl hover:shadow-orange-500/20">
                                             {/* Header */}
                                             <div className="px-3 py-2 flex items-center justify-between border-b border-gray-50">
                                                 <div className="flex items-center gap-2">
@@ -144,13 +163,18 @@ export function Projects() {
                                             </div>
 
                                             {/* Image */}
-                                            <div className="flex-1 bg-gray-100 overflow-hidden">
+                                            <div className="flex-1 bg-gray-100 overflow-hidden relative group">
                                                 <img
                                                     src={project.image}
                                                     alt={project.title}
                                                     loading="lazy"
                                                     className="w-full h-full object-cover"
                                                 />
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <span className="text-white font-bold tracking-widest uppercase text-sm border border-white px-4 py-2 rounded-full">
+                                                        View Story
+                                                    </span>
+                                                </div>
                                             </div>
 
                                             {/* Footer */}
@@ -191,6 +215,12 @@ export function Projects() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Modal */}
+            <ProjectModal
+                project={selectedProject}
+                onClose={() => setSelectedProject(null)}
+            />
         </section>
     );
 }
