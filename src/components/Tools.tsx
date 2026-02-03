@@ -79,7 +79,7 @@ export function Tools() {
         <section id="tools" className="relative z-10 py-32 px-6 bg-[#050505] overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-[120px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[800px] h-full md:h-[800px] bg-orange-500/5 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10 text-center">

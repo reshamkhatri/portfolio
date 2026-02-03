@@ -6,8 +6,8 @@ export function Contact() {
         <section id="contact" className="relative z-10 py-32 px-6 bg-[#050505] overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[60px]" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[60px]" />
+                <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-red-500/5 rounded-full blur-[60px]" />
+                <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-orange-500/5 rounded-full blur-[60px]" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">

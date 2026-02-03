@@ -13,8 +13,8 @@ export function About() {
         <section id="about" className="relative z-10 py-32 px-6 bg-[#0a0a0a] overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[80px] -translate-y-1/2" />
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-[60px]" />
+                <div className="absolute top-1/2 left-0 w-full md:w-[600px] h-full md:h-[600px] bg-orange-500/5 rounded-full blur-[80px] -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-red-500/5 rounded-full blur-[60px]" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
