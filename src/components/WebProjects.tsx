@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { useMemo, useRef, useState } from 'react';
 import { Check, ExternalLink } from 'lucide-react';
 
 type WebProject = {
@@ -129,28 +129,25 @@ function WebTabsShowcase({ projects }: { projects: WebProject[] }) {
         offset: ["start start", "end end"]
     });
 
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 120,
-        damping: 30,
-        mass: 0.8,
-        restDelta: 0.0005
+    useMotionValueEvent(scrollYProgress, "change", (value) => {
+        if (projects.length <= 1) return;
+        const clamped = Math.max(0, Math.min(1, value));
+        const next = Math.min(projects.length - 1, Math.round(clamped * (projects.length - 1)));
+        setActiveIndex((prev) => (prev === next ? prev : next));
     });
 
-    useEffect(() => {
-        if (projects.length <= 1) return;
+    const safeActiveIndex = useMemo(() => {
+        if (projects.length === 0) return 0;
+        return Math.min(activeIndex, projects.length - 1);
+    }, [activeIndex, projects.length]);
 
-        return smoothProgress.on("change", (value) => {
-            const clamped = Math.max(0, Math.min(1, value));
-            const next = Math.min(projects.length - 1, Math.round(clamped * (projects.length - 1)));
-            setActiveIndex((prev) => (prev === next ? prev : next));
-        });
-    }, [projects.length, smoothProgress]);
+    const activeProject = useMemo(() => projects[safeActiveIndex], [projects, safeActiveIndex]);
 
-    const activeProject = useMemo(() => projects[activeIndex]!, [activeIndex, projects]);
+    if (!activeProject) return null;
 
     return (
-        <div ref={wrapperRef} className="relative lg:h-[240vh]">
-            <div className="lg:sticky lg:top-0 lg:h-screen flex items-center">
+        <div ref={wrapperRef} className="relative min-h-[240vh]">
+            <div className="sticky top-0 h-[100svh] flex items-center">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
                     {/* Story/Stepper */}
                     <div className="lg:col-span-5 space-y-8">
