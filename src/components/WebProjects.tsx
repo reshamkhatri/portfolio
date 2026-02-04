@@ -59,7 +59,7 @@ export function WebProjects() {
         <section
             ref={containerRef}
             id="web-projects"
-            className="relative min-h-screen py-32 bg-[#0a0a0a] overflow-hidden"
+            className="relative min-h-screen pt-32 pb-16 bg-[#0a0a0a] overflow-hidden"
         >
             {/* Animated Background */}
             <div className="absolute inset-0 bg-[#0a0a0a]" />
@@ -124,6 +124,11 @@ function WebTabsShowcase({ projects }: { projects: WebProject[] }) {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const scrollHeightVh = useMemo(() => {
+        const steps = Math.max(0, projects.length - 1);
+        return Math.max(160, 100 + steps * 45);
+    }, [projects.length]);
+
     const { scrollYProgress } = useScroll({
         target: wrapperRef,
         offset: ["start start", "end end"]
@@ -146,7 +151,7 @@ function WebTabsShowcase({ projects }: { projects: WebProject[] }) {
     if (!activeProject) return null;
 
     return (
-        <div ref={wrapperRef} className="relative min-h-[240vh]">
+        <div ref={wrapperRef} className="relative" style={{ height: `${scrollHeightVh}vh` }}>
             <div className="sticky top-0 h-[100svh] flex items-center">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
                     {/* Story/Stepper */}
