@@ -1,14 +1,26 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { ExternalLink, Globe, Layout, Monitor } from 'lucide-react';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Check, ExternalLink, Globe, Layout, Monitor } from 'lucide-react';
 
-const webProjects = [
+type WebProject = {
+    title: string;
+    url: string;
+    image: string;
+    tags: string[];
+    description: string;
+    highlights: string[];
+    color: string;
+    gradient: string;
+};
+
+const webProjects: WebProject[] = [
     {
         title: "Himalayan Willow",
         url: "https://www.himalayanwillow.com.np/",
         image: "/projects/himalayan_willow.png",
         tags: ["E-commerce", "Sports", "Cricket"],
         description: "A vibrant sports e-commerce store specializing in premium willow cricket equipment.",
+        highlights: ["Product-first UI", "Conversion-focused layout", "Mobile-optimized experience"],
         color: "from-emerald-600 to-teal-800",
         gradient: "from-emerald-500/20 via-teal-500/20 to-transparent"
     },
@@ -18,6 +30,7 @@ const webProjects = [
         image: "/projects/iconic_law.png",
         tags: ["Legal", "Corporate Law", "Authority"],
         description: "A sophisticated professional platform for a leading law firm, emphasizing trust and experience.",
+        highlights: ["Trust-led design language", "Clear practice-area hierarchy", "Fast, accessible pages"],
         color: "from-amber-600 to-yellow-800",
         gradient: "from-amber-500/20 via-yellow-500/20 to-transparent"
     },
@@ -27,6 +40,7 @@ const webProjects = [
         image: "/projects/dglytix.png",
         tags: ["Web Agency", "Creative Design", "Global Services"],
         description: "A high-performance digital agency platform focusing on global creativity and digital future.",
+        highlights: ["Bold hero storytelling", "Smooth interactions", "Agency-style layout system"],
         color: "from-blue-600 to-purple-600",
         gradient: "from-blue-500/20 via-purple-500/20 to-transparent"
     }
@@ -97,6 +111,11 @@ export function WebProjects() {
                     </motion.p>
                 </motion.div>
 
+                {/* Unique: Scroll-synced tabbed browser showcase */}
+                <div className="mb-28">
+                    <WebTabsShowcase projects={webProjects} />
+                </div>
+
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 gap-32">
                     {webProjects.map((project, index) => (
@@ -108,7 +127,197 @@ export function WebProjects() {
     );
 }
 
-function WebProjectCard({ project, index }: { project: any, index: number }) {
+function WebTabsShowcase({ projects }: { projects: WebProject[] }) {
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const { scrollYProgress } = useScroll({
+        target: wrapperRef,
+        offset: ["start start", "end end"]
+    });
+
+    useEffect(() => {
+        if (projects.length <= 1) return;
+        return scrollYProgress.on("change", (value) => {
+            const clamped = Math.max(0, Math.min(1, value));
+            const next = Math.min(projects.length - 1, Math.floor(clamped * projects.length));
+            setActiveIndex((prev) => (prev === next ? prev : next));
+        });
+    }, [projects.length, scrollYProgress]);
+
+    const activeProject = useMemo(() => projects[activeIndex]!, [activeIndex, projects]);
+
+    return (
+        <div ref={wrapperRef} className="relative lg:h-[240vh]">
+            <div className="lg:sticky lg:top-0 lg:h-screen flex items-center">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+                    {/* Story/Stepper */}
+                    <div className="lg:col-span-5 space-y-8">
+                        <div className="space-y-2">
+                            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 font-space">
+                                Scroll to switch tabs
+                            </p>
+                            <h3 className="text-2xl md:text-3xl font-bold font-space">
+                                Websites as a <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Story</span>
+                            </h3>
+                            <p className="text-gray-400 text-base leading-relaxed">
+                                Instead of a flat grid, this section behaves like a product demo: tabs change as you scroll,
+                                and each website gets a quick “why it works” snapshot.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3">
+                            {projects.map((project, i) => {
+                                const isActive = i === activeIndex;
+                                return (
+                                    <button
+                                        key={project.title}
+                                        type="button"
+                                        onClick={() => setActiveIndex(i)}
+                                        className={`w-full text-left rounded-2xl border px-5 py-4 transition-all ${isActive
+                                            ? 'bg-white/10 border-orange-500/30 shadow-[0_0_0_1px_rgba(249,115,22,0.15)]'
+                                            : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
+                                            }`}
+                                        aria-current={isActive ? 'true' : undefined}
+                                    >
+                                        <div className="flex items-start gap-4">
+                                            <div className={`mt-2 h-2.5 w-2.5 rounded-full ${isActive ? 'bg-orange-400' : 'bg-white/20'}`} />
+                                            <div className="min-w-0">
+                                                <div className="flex items-center justify-between gap-3">
+                                                    <p className={`font-semibold ${isActive ? 'text-white' : 'text-gray-200'}`}>
+                                                        {project.title}
+                                                    </p>
+                                                    <span className="text-[10px] text-gray-500 font-mono truncate max-w-[140px]">
+                                                        {project.url.replace('https://', '').replace('www.', '')}
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm text-gray-500 mt-1">
+                                                    {project.tags.join(' • ')}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                );
+                            })}
+                        </div>
+
+                        <motion.div
+                            key={activeProject.title}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.35, ease: "easeOut" }}
+                            className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                        >
+                            <p className="text-gray-300 leading-relaxed">
+                                {activeProject.description}
+                            </p>
+                            <ul className="mt-4 space-y-2">
+                                {activeProject.highlights.map((item) => (
+                                    <li key={item} className="flex items-start gap-3 text-sm text-gray-400">
+                                        <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 border border-white/10">
+                                            <Check className="h-3.5 w-3.5 text-orange-400" />
+                                        </span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </div>
+
+                    {/* Tabbed Browser */}
+                    <div className="lg:col-span-7">
+                        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent shadow-2xl overflow-hidden">
+                            {/* Chrome */}
+                            <div className="px-5 py-4 border-b border-white/10 bg-white/5 backdrop-blur-sm">
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-2">
+                                        <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
+                                    </div>
+
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex gap-2 overflow-x-auto">
+                                            {projects.map((p, i) => {
+                                                const isActive = i === activeIndex;
+                                                return (
+                                                    <button
+                                                        key={p.title}
+                                                        type="button"
+                                                        onClick={() => setActiveIndex(i)}
+                                                        className={`shrink-0 px-3 py-1.5 rounded-full text-xs border transition-all ${isActive
+                                                            ? 'bg-white text-black border-white'
+                                                            : 'bg-black/30 text-gray-300 border-white/10 hover:border-white/20 hover:bg-white/10'
+                                                            }`}
+                                                        aria-label={`Show ${p.title}`}
+                                                    >
+                                                        {p.title}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-3 h-7 rounded-lg border border-white/10 bg-black/40 flex items-center px-3">
+                                    <span className="text-[11px] text-gray-400 font-mono truncate">
+                                        {activeProject.url.replace('https://', '').replace('www.', '')}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Preview */}
+                            <div className="p-5 md:p-7">
+                                <div className="relative rounded-2xl border border-white/10 bg-black/30 overflow-hidden">
+                                    <div className={`absolute inset-0 bg-gradient-to-tr ${activeProject.gradient} opacity-70 pointer-events-none`} />
+                                    <div className="relative aspect-video">
+                                        <AnimatePresence mode="wait">
+                                            <motion.img
+                                                key={activeProject.image}
+                                                src={activeProject.image}
+                                                alt={`${activeProject.title} website screenshot`}
+                                                className="absolute inset-0 h-full w-full object-cover object-top"
+                                                initial={{ opacity: 0, scale: 1.02 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                exit={{ opacity: 0, scale: 0.99 }}
+                                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                                loading="lazy"
+                                            />
+                                        </AnimatePresence>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                    <div className="flex flex-wrap gap-2">
+                                        {activeProject.tags.map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400 font-medium"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <a
+                                        href={activeProject.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-6 py-3 font-semibold hover:bg-orange-500 hover:text-white transition-colors"
+                                    >
+                                        Open Live Site <ExternalLink size={18} />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function WebProjectCard({ project, index }: { project: WebProject, index: number }) {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
