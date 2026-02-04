@@ -10,6 +10,7 @@ import { Projects } from './components/Projects'
 import { ScrollProgress } from './components/ui/ScrollProgress'
 import { ScrollToTop } from './components/ui/ScrollToTop'
 import { NotFound } from './pages/NotFound'
+import { useLenis } from './lib/useLenis'
 
 // Lazy load non-critical sections
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })))
@@ -43,6 +44,8 @@ function HomePage() {
 }
 
 function App() {
+    useLenis({ lerp: 0.08 })
+
     return (
         <div className="min-h-screen bg-[#0a0a0a] cursor-none">
             <ScrollProgress />
