@@ -112,9 +112,7 @@ export function WebProjects() {
                 </motion.div>
 
                 {/* Unique: Scroll-synced tabbed browser showcase */}
-                <div className="mb-28">
-                    <WebTabsShowcase projects={webProjects} />
-                </div>
+                <WebTabsShowcase projects={webProjects} />
             </div>
         </section>
     );
@@ -126,7 +124,7 @@ function WebTabsShowcase({ projects }: { projects: WebProject[] }) {
 
     const scrollHeightVh = useMemo(() => {
         const steps = Math.max(0, projects.length - 1);
-        return Math.max(160, 100 + steps * 45);
+        return Math.max(135, 125 + steps * 20);
     }, [projects.length]);
 
     const { scrollYProgress } = useScroll({
