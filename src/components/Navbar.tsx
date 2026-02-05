@@ -7,7 +7,6 @@ const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Websites', href: '#web-projects' },
-    { name: 'UI Lab', href: '#ui-lab' },
 ];
 
 export function Navbar() {

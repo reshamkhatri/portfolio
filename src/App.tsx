@@ -18,7 +18,6 @@ const Tools = lazy(() => import('./components/Tools').then(m => ({ default: m.To
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })))
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })))
 const Marquee = lazy(() => import('./components/Marquee').then(m => ({ default: m.Marquee })))
-const UILab = lazy(() => import('./components/UILab').then(m => ({ default: m.UILab })))
 
 // Loading fallback component
 const SectionLoader = () => (
@@ -36,7 +35,6 @@ function HomePage() {
                 <About />
                 <Projects />
                 <WebProjects />
-                <UILab />
                 <Tools />
                 <Testimonials />
                 <Contact />
