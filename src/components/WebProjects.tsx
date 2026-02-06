@@ -125,14 +125,6 @@ export function WebProjects() {
                 <div className="absolute -bottom-40 right-[-120px] w-[700px] h-[700px] bg-red-500/5 rounded-full blur-[140px]" />
             </div>
 
-            <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: 'easeOut' }}
-                className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
-            />
-
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

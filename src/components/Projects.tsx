@@ -79,7 +79,7 @@ export function Projects() {
         <section
             id="projects"
             ref={sectionRef}
-            className="relative bg-[#0a0a0a] z-10"
+            className="relative bg-[#0a0a0a] z-20"
             style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '150vh' : '300vh' }}
         >
             {/* Sticky Container */}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Contact() {
     return (
@@ -28,15 +28,15 @@ export function Contact() {
                         </p>
 
                         <div className="space-y-8">
-                            <div className="flex items-center gap-4 group cursor-pointer">
+                            <a href="mailto:rbkcresham@gmail.com" className="flex items-center gap-4 group cursor-pointer">
                                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
                                     <Mail className="text-white w-5 h-5" />
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-500 mb-1">Email us</p>
-                                    <p className="text-white font-medium">contact@reshamkhatri.com</p>
+                                    <p className="text-white font-medium">rbkcresham@gmail.com</p>
                                 </div>
-                            </div>
+                            </a>
 
                             <a href="https://wa.me/9779764352843" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group cursor-pointer">
                                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-green-500 transition-colors duration-300">
@@ -64,7 +64,12 @@ export function Contact() {
                             <a href="https://www.instagram.com/reshamrkc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                                 <Instagram size={24} />
                             </a>
-                            {/* Add more social icons as needed */}
+                            <a href="https://www.linkedin.com/in/resham-kc-a7a7a7a7/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                                <Linkedin size={24} />
+                            </a>
+                            <a href="https://www.facebook.com/reshamrkc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                                <Facebook size={24} />
+                            </a>
                         </div>
                     </motion.div>
 
@@ -136,7 +141,7 @@ export function Contact() {
                 </div>
 
                 <div className="mt-20 border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                    <p>© 2026 Resham Khatri. All rights reserved.</p>
+                    <p>(c) 2026 Resham Khatri. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition-colors">Terms of Conditions</a>
@@ -146,3 +151,4 @@ export function Contact() {
         </section>
     );
 }
+
