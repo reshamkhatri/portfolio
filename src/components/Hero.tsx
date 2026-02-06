@@ -14,7 +14,7 @@ export function Hero() {
     }, []);
 
     return (
-        <section className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
+        <section id="home" className="sticky top-0 z-0 min-h-[100vh] bg-black overflow-hidden px-4 md:px-0">
             {/* Static Background Glow Effects - Minimal footprint */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_70%_30%,#ea580c_0%,transparent_70%)]" />
@@ -54,7 +54,7 @@ export function Hero() {
                 >
                     <img
                         src="/hero-image.png"
-                        alt="Hero Portrait"
+                        alt="Resham KC, graphic designer and social media manager in Nepal"
                         className="h-[65%] md:h-[105%] w-auto object-contain object-bottom select-none opacity-60 md:opacity-100"
                     />
                 </motion.div>
@@ -99,6 +99,16 @@ export function Hero() {
                                 </AnimatePresence>
                             </div>
                         </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 14 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.75 }}
+                            className="mt-4 text-sm md:text-base text-gray-300 max-w-xl"
+                        >
+                            Graphic Designer in Nepal | Social Media Manager in Nepal | Brand and Web Creative
+                            Strategist
+                        </motion.p>
                     </div>
 
                     {/* Tagline Box */}

@@ -62,7 +62,7 @@ export function About() {
                             </p>
                             <p className="text-gray-400 leading-relaxed">
                                 Every project I undertake is an opportunity to push boundaries and explore new
-                                possibilities. I believe great design isn't just about aesthetics—it's about
+                                possibilities. I believe great design is not just about aesthetics - it is about
                                 solving problems and creating meaningful connections.
                             </p>
                         </div>
