@@ -15,6 +15,7 @@ import { useLenis } from './lib/useLenis'
 // Lazy load non-critical sections
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })))
 const SeoContent = lazy(() => import('./components/SeoContent').then(m => ({ default: m.SeoContent })))
+const FaqSection = lazy(() => import('./components/FaqSection').then(m => ({ default: m.FaqSection })))
 const Tools = lazy(() => import('./components/Tools').then(m => ({ default: m.Tools })))
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })))
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })))
@@ -40,6 +41,7 @@ function HomePage() {
                 <Tools />
                 <Testimonials />
                 <Contact />
+                <FaqSection />
             </Suspense>
         </main>
     )
