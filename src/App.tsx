@@ -6,6 +6,7 @@ import { Hero } from './components/Hero'
 import { Cursor } from './components/Cursor'
 import { AllProjects } from './components/AllProjects'
 import { WebProjects } from './components/WebProjects'
+import { AppUiProjects } from './components/AppUiProjects'
 import { Projects } from './components/Projects'
 import { ScrollProgress } from './components/ui/ScrollProgress'
 import { ScrollToTop } from './components/ui/ScrollToTop'
@@ -38,6 +39,7 @@ function HomePage() {
                 <SeoContent />
                 <Projects />
                 <WebProjects />
+                <AppUiProjects />
                 <Tools />
                 <Testimonials />
                 <Contact />
