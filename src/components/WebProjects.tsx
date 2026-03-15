@@ -133,7 +133,7 @@ export function WebProjects() {
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold font-space mb-6">
+                    <h2 className="text-4xl md:text-7xl font-bold font-space mb-6">
                         Web{' '}
                         <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                             Showcase

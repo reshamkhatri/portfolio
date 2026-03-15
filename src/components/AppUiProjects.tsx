@@ -63,7 +63,7 @@ function AppSection({ app, index }: { app: typeof apps[0]; index: number }) {
     const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     return (
-        <div ref={containerRef} className="relative py-20 mb-40 last:mb-0">
+        <div ref={containerRef} className="relative py-20 mb-40 last:mb-0 overflow-hidden">
             {/* Immersive Background */}
             <div className={`absolute inset-0 bg-gradient-to-b ${app.gradient} pointer-events-none rounded-[4rem]`} />
 
@@ -105,7 +105,7 @@ function AppSection({ app, index }: { app: typeof apps[0]; index: number }) {
                     </div>
 
                     {/* Visual Column */}
-                    <div className="lg:col-span-7 relative h-[600px] flex items-center justify-center">
+                    <div className="lg:col-span-7 relative h-[600px] flex items-center justify-center overflow-hidden">
                         <motion.div style={{ y }} className="relative flex gap-8 overflow-x-auto no-scrollbar snap-x px-10 py-10 w-full mask-linear-fade">
                             {app.screens.map((screen, i) => (
                                 <div key={i} className="snap-center">
@@ -145,7 +145,7 @@ export function AppUiProjects() {
                     viewport={{ once: true }}
                     className="text-center mb-40"
                 >
-                    <h2 className="text-6xl md:text-9xl font-bold font-space mb-8 tracking-tight">
+                    <h2 className="text-4xl md:text-9xl font-bold font-space mb-8 tracking-tight">
                         APP{' '}
                         <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                             LAB

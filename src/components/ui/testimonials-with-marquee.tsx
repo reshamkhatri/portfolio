@@ -34,7 +34,7 @@ export function TestimonialsSection({
                     </p>
                 </div>
 
-                <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+                <div className="relative flex w-full max-w-full flex-col items-center justify-center overflow-hidden">
                     <div className="group flex overflow-hidden p-2 flex-row" style={{ gap: '2rem' }}>
                         <div
                             className="flex shrink-0 justify-around flex-row group-hover:[animation-play-state:paused]"
