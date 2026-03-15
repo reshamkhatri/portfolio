@@ -56,9 +56,9 @@ export function Projects() {
 
     const { faceWidth, radius, height } = useMemo(() => {
         const isMobile = windowWidth < 768;
-        const cw = isMobile ? 1200 : 2000;
-        const fw = isMobile ? 280 : 380;
-        const h = isMobile ? 380 : 480;
+        const cw = isMobile ? 800 : 2000;
+        const fw = isMobile ? 220 : 380;
+        const h = isMobile ? 320 : 480;
         return {
             faceWidth: fw,
             radius: cw / (2 * Math.PI),
